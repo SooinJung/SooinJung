@@ -1,5 +1,5 @@
 <!--타이틀 부분-->
-<img src="https://capsule-render.vercel.app/api?type=blur&color=auto&height=300&section=header&text=It's Sooin Jung%20render&fontSize=90" />
+<img src="https://capsule-render.vercel.app/api?type=blur&color=auto&height=300&section=header&text=It's+Sooin+Jung%20render&fontSize=90" />
 
 <!--내용 부분-->
 <h3>✨ Tech Stack ✨</h3>
