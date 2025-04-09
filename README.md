@@ -1,5 +1,5 @@
 <!--타이틀 부분-->
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=B5F733&center=true&width=435&lines=Hello%2C+It's+Sooin+Jung" alt="Typing SVG" /></a>
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=B5F733&center=true&width=435&lines=Hello%2C+It's+Sooin+Jung)](https://git.io/typing-svg)
 
 <!--내용 부분-->
 <h3 align="center">✨ Tech Stack ✨</h3>
