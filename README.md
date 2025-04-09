@@ -1,4 +1,5 @@
 <!--타이틀 부분-->
+<img src="https://capsule-render.vercel.app/api?type=blur&color=auto&height=300&section=header&text=capsule%20render&fontSize=90" />
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=B5F733&center=true&width=435&lines=Hello%2C+It's+Sooin+Jung)](https://git.io/typing-svg)
 
 <!--내용 부분-->
