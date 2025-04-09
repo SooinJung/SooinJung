@@ -1,5 +1,7 @@
 <!--타이틀 부분-->
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=First+line+of+text;Second+line+of+text)](https://git.io/typing-svg)
+<div align="center">
+  [![Typing SVG](https://readme-typing-svg.demolab.com/?lines=First+line+of+text;Second+line+of+text)](https://git.io/typing-svg)
+</div>
 
 <!--내용 부분-->
 <h3 align="center">✨ Tech Stack ✨</h3>
