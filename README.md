@@ -37,18 +37,14 @@
   <img src="https://img.shields.io/badge/pytorch-EE4C2C.svg?style=for-the-badge&logo=pytorch&logoColor=white" />&nbsp
 </div>
 
-<br>
-
-<h3>📚 Studying 📚</h3>
+<h4>📚 Studying 📚</h4>
 <div>
   <img src="https://img.shields.io/badge/typescript-007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" />&nbsp
   <img src="https://img.shields.io/badge/React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white" />&nbsp
   <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white" />&nbsp
 </div>
 
-<br>
-
-<h3>🛠 Tools 🛠</h3>
+<h4>🛠 Tools 🛠</h4>
 <div>
   <img src="https://img.shields.io/badge/git-F05033.svg?style=for-the-badge&logo=git&logoColor=white" />&nbsp
   <img src="https://img.shields.io/badge/github-181717.svg?style=for-the-badge&logo=github&logoColor=white" />&nbsp
@@ -64,3 +60,4 @@
  
 ## 🤔 Github Stats
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=SooinJung)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=SooinJung)](https://github.com/anuraghazra/github-readme-stats)
