@@ -39,7 +39,6 @@
   <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white" />&nbsp
 </div>
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=SooinJung)](https://github.com/anuraghazra/github-readme-stats)
 <br>
 
 <h3>🛠 Tools 🛠</h3>
@@ -52,3 +51,7 @@
   <img src="https://img.shields.io/badge/VSCode-2C2C32.svg?style=for-the-badge&logo=visual-studio-code&logoColor=22ABF3" />&nbsp
   <img src="https://img.shields.io/badge/jupyter-2C2C32.svg?style=for-the-badge&logo=jupyter&logoColor=F37726" />&nbsp
 </div>
+
+<br>
+
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=SooinJung)](https://github.com/anuraghazra/github-readme-stats)
