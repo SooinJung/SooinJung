@@ -1,8 +1,15 @@
 <!--타이틀 부분-->
 <img src="https://capsule-render.vercel.app/api?type=blur&color=gradient&height=300&section=header&text=It's+Sooin+Jung&fontSize=90" />
 
+## 👀 About Me
+#### :raising_hand: I am a AI Engineer from South Korea.<br/>
+#### :mortar_board: Bachelor of Artificial Intelligence, Sookmyung Women's University(SMWU)
+<br/>
+<br/>
+
+
 <!--내용 부분-->
-<h3>✨ Tech Stack ✨</h3>
+## 🧱 Tech Stack
 <h4> Frontend </h4>
 <div>
   <img src="https://img.shields.io/badge/react-20232a.svg?style=for-the-badge&logo=react&logoColor=61DAFB" />&nbsp
@@ -54,4 +61,6 @@
 
 <br>
 
+ 
+## 🤔 Github Stats
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=SooinJung)](https://github.com/anuraghazra/github-readme-stats)
