@@ -39,6 +39,7 @@
   <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white" />&nbsp
 </div>
 
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=SooinJung)](https://github.com/SooinJung/github-readme-stats)
 <br>
 
 <h3>🛠 Tools 🛠</h3>
