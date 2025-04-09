@@ -17,6 +17,10 @@
   <img src="https://img.shields.io/badge/pandas-150458.svg?style=for-the-badge&logo=pandas&logoColor=white" />&nbsp
   <img src="https://img.shields.io/badge/numpy-4d77cf.svg?style=for-the-badge&logo=numpy&logoColor=white" />&nbsp
   <img src="https://img.shields.io/badge/Matplotlib-11557c.svg?style=for-the-badge&logo=Matplotlib&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/Fastapi-009688.svg?style=for-the-badge&logo=Fastapi&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/Mysql-4479A1.svg?style=for-the-badge&logo=Mysql@logoColor=white" />&nbsp
+</div>
+<div>
 </div>
 
 <br>
