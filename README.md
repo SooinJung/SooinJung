@@ -2,9 +2,12 @@
 <img src="https://capsule-render.vercel.app/api?type=blur&color=gradient&height=300&section=header&text=Hello!+I'm+Sooin+Jung&fontSize=80" />
 
 ## 👀 About Me
+
+#### 🏢 Research Engineer @ KETI (Korea Electronics Technology Institute)  
+#### 🏢 Currently working as a Research Engineer at KETI (Korea Electronics Technology Institute).  
+#### 🌐 Developing an MQTT-based messaging platform and conducting research on Multi-Modal Large Language Models (MLLM) using CCTV data.  
 #### :raising_hand: I am a software engineer from South Korea.<br/>
 #### :mortar_board: Bachelor of Artificial Intelligence, Sookmyung Women's University(SMWU).
-#### :fire: I enjoy collaborating with others and love taking on new challenges across different fields.
 <br/>
 <br/>
 
