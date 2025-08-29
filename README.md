@@ -2,7 +2,7 @@
 <img src="https://capsule-render.vercel.app/api?type=blur&color=gradient&height=300&section=header&text=Hello!+I'm+Sooin+Jung&fontSize=80" />
 
 ## 👀 About Me
-#### :raising_hand: I am an AI Engineer from South Korea.<br/>
+#### :raising_hand: I am a software engineer from South Korea.<br/>
 #### :mortar_board: Bachelor of Artificial Intelligence, Sookmyung Women's University(SMWU).
 #### :fire: I enjoy collaborating with others and love taking on new challenges across different fields.
 <br/>
