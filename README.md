@@ -3,7 +3,6 @@
 
 ## 👀 About Me
 
-#### 🏢 Research Engineer @ KETI (Korea Electronics Technology Institute)  
 #### 🏢 Currently working as a Research Engineer at KETI (Korea Electronics Technology Institute).  
 #### 🌐 Developing an MQTT-based messaging platform and conducting research on Multi-Modal Large Language Models (MLLM) using CCTV data.  
 #### :raising_hand: I am a software engineer from South Korea.<br/>
