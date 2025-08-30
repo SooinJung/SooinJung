@@ -3,7 +3,7 @@
 
 ## 👀 About Me
 
-#### :raising_hand: I am a software engineer from South Korea.<br/>
+#### :raising_hand: I am a software engineer and AI researcher from South Korea.<br/>
 #### :mortar_board: Bachelor of Artificial Intelligence, Sookmyung Women's University(SMWU).
 #### 🏢 Currently working as a Research Engineer at KETI (Korea Electronics Technology Institute).  
 #### 🌐 Developing an MQTT-based messaging platform and conducting research on Multi-Modal Large Language Models (MLLM) using CCTV data.  
