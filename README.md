@@ -58,6 +58,8 @@
   <img src="https://img.shields.io/badge/jupyter-2C2C32.svg?style=for-the-badge&logo=jupyter&logoColor=F37726" />&nbsp
 </div>
 
+![Metrics](https://metrics.lecoq.io/?template=classic&stars=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&stars=false&stars.limit=4&config.timezone=Asia%2FSeoul)
+
 ## 🌱 Contributions
 <p align="center">
   <img src="./metrics.plugin.isocalendar.fullyear.svg" alt="isometric commit calendar" />
