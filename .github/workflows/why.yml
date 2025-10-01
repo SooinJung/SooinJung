@@ -17,7 +17,7 @@ jobs:
           filename: metrics.classic.svg
           token: ${{ secrets.METRICS_TOKEN }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: header, repositories
+          base: header, activity, repositories, community
           config_timezone: Asia/Seoul
           template: classic
 
