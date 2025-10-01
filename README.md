@@ -1,10 +1,10 @@
 <!-- 타이틀 부분 -->
 <img src="https://capsule-render.vercel.app/api?type=blur&color=gradient&height=300&section=header&text=Hello!+I'm+Sooin+Jung&fontSize=80" />
 
-<h2 align="center">👀 Sooin 👀</h2>
+<h2 align="center">🌟 Sooin 🌟</h2>
 <p align="center">
   <a href="https://sxxwings.notion.site/1699f65ecb438023967c6415922db09?source=copy_link">
-    <img src="https://img.shields.io/badge/📖_ABOUT_ME-8B0000?style=for-the-badge&logoColor=white"/>
+    <img src="https://img.shields.io/badge/👼🏻_ABOUT_ME-3B82F6?style=for-the-badge&logoColor=white"/>
   </a>
 </p>
 
@@ -16,6 +16,9 @@
   </a>
     <a href="https://github.com/KETI-OSSA-project">
 <img src="https://img.shields.io/badge/📖_KETI_OSSA-000000?style=for-the-badge&logo=https%3A%2F%2Fgithub.com%2Fuser-attachments%2Fassets%2F01744572-1280-4d2c-b30f-410b94271d9f&logoColor=white"/>
+  </a>
+    <a href="[https://github.com/KETI-OSSA-project](https://github.com/JOBS-Sookmyung)">
+<img src="https://img.shields.io/badge/👀_JOBIS-8B0000?style=for-the-badge&logo=https%3A%2F%2Fgithub.com%2Fuser-attachments%2Fassets%2F01744572-1280-4d2c-b30f-410b94271d9f&logoColor=white"/>
   </a>
 </p>
 <table>
