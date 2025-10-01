@@ -1,0 +1,69 @@
+name: Generate Separate Metrics
+on:
+  schedule: [{ cron: "0 0 * * *" }]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 👤 User Account Metrics
+      - name: User Account Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.classic.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          base: header, repositories
+          config_timezone: Asia/Seoul
+          template: classic
+
+      # ⭐ Recently Starred Repositories
+      - name: Recently Starred Repos
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.stars.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          base: ""
+          plugin_stars: yes
+          plugin_stars_limit: 3
+
+      # 🈷️ Languages
+      - name: Most Used Languages
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.languages.svg   # ⭐ 전통적인 파일명 (starlists 제거)
+          token: ${{ secrets.METRICS_TOKEN }}      # Classic PAT (GraphQL 가능해야 함)
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          base: ""
+          plugin_languages: yes                    # 플러그인 활성화
+          plugin_languages_ignored: html, css      # 무시할 언어
+          plugin_languages_details: bytes-size, percentage  # 표시할 세부 정보
+          plugin_languages_limit: 8                # 최대 표시 언어 수
+
+      # 💡 Coding Habits
+      - name: Recent activity
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.activity.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 0
+          plugin_activity_filter: issue, pr, release, fork, review, ref/create
+          
+      # 📅 Isometric Commit Calendar
+      - name: Isometric Commit Calendar
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.isocalendar.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
