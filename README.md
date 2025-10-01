@@ -19,12 +19,10 @@
         <!-- 👤 User Account Metrics -->
         <img src="./metrics.classic.svg" alt="User Account Metrics" />
       </p>
-      <br/>
       <p align="center">
         <!-- ⭐ Recently Starred Repositories -->
         <img src="./metrics.plugin.stars.svg" alt="Recently Starred Repositories" />
       </p>
-      <br/>
     </td>
     <td valign="top" width="50%">
       <!-- 📅 Isometric Commit Calendar -->
