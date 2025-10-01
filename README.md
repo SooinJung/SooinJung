@@ -1,38 +1,62 @@
-<!-- ─────────────────────────────────────────────────────────
-👑 Sooin Jung | GitHub Profile README
-- username: pinksooin (필요시 변경)
-- Zerohertz 스타일: 헤더 배너 + 타임라인 + 배지 + 통계
-────────────────────────────────────────────────────────── -->
-
-<!-- 타이틀 배너 -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=blur&color=gradient&height=300&section=header&text=Hello!%20I'm%20Sooin%20Jung&fontSize=80&fontAlign=50&desc=AI%20Researcher%20%26%20Software%20Engineer&descAlignY=72" />
-</p>
-
-<!-- 상단 배지 -->
-<p align="center">
-  <a href="mailto:pinksooin@gmail.com">
-    <img src="https://img.shields.io/badge/Email-pinksooin%40gmail.com-blueviolet?style=for-the-badge" />
-  </a>
-  <a href="https://github.com/pinksooin">
-    <img src="https://img.shields.io/github/followers/pinksooin?label=Follow&style=for-the-badge" />
-  </a>
-  <img src="https://komarev.com/ghpvc/?username=pinksooin&style=for-the-badge&label=Profile%20Views" />
-</p>
-
----
+''<!-- 타이틀 부분 -->
+<img src="https://capsule-render.vercel.app/api?type=blur&color=gradient&height=300&section=header&text=Hello!+I'm+Sooin+Jung&fontSize=80" />
 
 ## 👀 About Me
 
-#### 🙋‍♀️ I am a software engineer and AI researcher from South Korea.
-#### 🎓 Bachelor of Artificial Intelligence, Sookmyung Women's University (SMWU).
-#### 🏢 Currently working as a **Research Engineer at KETI** (Korea Electronics Technology Institute).
-#### 🌐 Developing an **MQTT-based messaging platform** and researching **Multi-Modal Large Language Models (MLLM)** on **CCTV** data.
+#### :raising_hand: I am a software engineer and AI researcher from South Korea.<br/>
+#### :mortar_board: Bachelor of Artificial Intelligence, Sookmyung Women's University(SMWU).
+#### 🏢 Currently working as a Research Engineer at KETI (Korea Electronics Technology Institute).  
+#### 🌐 Developing an MQTT-based messaging platform and conducting research on Multi-Modal Large Language Models (MLLM) using CCTV data.  
+<br/>
+<br/>
 
-- Interests: **Edge AI**, **Vision × LLM**, **Realtime messaging**, **Model Serving**
-- Contact: <a href="mailto:pinksooin@gmail.com">pinksooin@gmail.com</a>
 
----
+<!--내용 부분-->
+## 🧱 Tech Stack
+<h4> Frontend </h4>
+<div>
+  <img src="https://img.shields.io/badge/react-20232a.svg?style=for-the-badge&logo=react&logoColor=61DAFB" />&nbsp
+  <img src="https://img.shields.io/badge/javascript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=20232a" />&nbsp
+  <img src="https://img.shields.io/badge/html5-E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=ffd35b" />&nbsp
+  <img src="https://img.shields.io/badge/tailwindcss-1daabb.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/css3-1572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />&nbsp
+</div>
+<h4> Backend </h4>
+<div>
+  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" />&nbsp
+  <img src="https://img.shields.io/badge/pandas-150458.svg?style=for-the-badge&logo=pandas&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/numpy-4d77cf.svg?style=for-the-badge&logo=numpy&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/Matplotlib-11557c.svg?style=for-the-badge&logo=Matplotlib&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/Fastapi-009688.svg?style=for-the-badge&logo=Fastapi&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=Docker&logoColor=white"/>&nbsp
+</div>
+<h4> AI </h4>
+<div>
+  <img src="https://img.shields.io/badge/tensorflow-FF6F00.svg?style=for-the-badge&logo=tensorflow&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/streamlit-FF4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/huggingface-FFD21E.svg?style=for-the-badge&logo=huggingface&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/pytorch-EE4C2C.svg?style=for-the-badge&logo=pytorch&logoColor=white" />&nbsp
+</div>
 
-## ⚡ Career Timeline
+<h4>📚 Studying 📚</h4>
+<div>
+  <img src="https://img.shields.io/badge/typescript-007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white" />&nbsp
+</div>
 
+<h4>🛠 Tools 🛠</h4>
+<div>
+  <img src="https://img.shields.io/badge/git-F05033.svg?style=for-the-badge&logo=git&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/github-181717.svg?style=for-the-badge&logo=github&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/Notion-F3F3F3.svg?style=for-the-badge&logo=notion&logoColor=black" />&nbsp
+  <img src="https://img.shields.io/badge/adobe%20photoshop-08253c.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=37abff" />&nbsp
+  <img src="https://img.shields.io/badge/figma-F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/VSCode-2C2C32.svg?style=for-the-badge&logo=visual-studio-code&logoColor=22ABF3" />&nbsp
+  <img src="https://img.shields.io/badge/jupyter-2C2C32.svg?style=for-the-badge&logo=jupyter&logoColor=F37726" />&nbsp
+</div>
+
+<br/>
+<br/>
