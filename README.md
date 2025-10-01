@@ -32,7 +32,7 @@
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=Docker&logoColor=white"/>&nbsp
 </div>
 
-## 📊 My Contribution
+## 📊 My Contributions
 <img src="./metrics.plugin.isocalendar.fullyear.svg" alt="isometric commit calendar" />
 
 <!-- <table>
