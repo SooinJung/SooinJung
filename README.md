@@ -37,28 +37,26 @@
 <table>
   <tr>
     <td valign="top" width="50%">
-      <img src="https://github-readme-stats.vercel.app/api?username=pinksooin&show_icons=true&theme=tokyonight&rank_icon=github" alt="Stats" />
+      <p align="center">
+        <img src="./metrics.user.svg" alt="User Metrics" />
+      </p>
       <br/>
-      <h4>⭐ Recently Starred</h4>
-      <ul>
-        <li><a href="https://github.com/zerohertz">zerohertz</a></li>
-        <li><a href="https://github.com/anuraghazra/github-readme-stats">github-readme-stats</a></li>
-        <li><a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a></li>
-      </ul>
-      <h4>📈 Activity Summary</h4>
-      <ul>
-        <li>🌟 100+ Stars</li>
-        <li>🍴 20+ Forks</li>
-        <li>🗓️ Active streak ongoing!</li>
-      </ul>
+      <p align="center">
+        <img src="./metrics.org.svg" alt="Organization Metrics" />
+      </p>
+      <br/>
     </td>
 
   <td valign="top" width="50%">
       <img src="./metrics.plugin.isocalendar.fullyear.svg" alt="isometric commit calendar" />
       <br/>
-      <img src="https://metrics.lecoq.io/pinksooin?template=classic&habits=1&habits.charts=true&config.timezone=Asia%2FSeoul" alt="Habits"/>
+      <p align="center">
+        <img src="./metrics.languages.svg" alt="Languages" />
+      </p>
       <br/>
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pinksooin&layout=compact&theme=tokyonight" alt="Languages"/>
+      <p align="center">
+        <img src="./metrics.habits.svg" alt="Coding Habits" />
+      </p>
     </td>
   </tr>
 </table>
