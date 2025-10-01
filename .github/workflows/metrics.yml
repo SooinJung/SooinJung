@@ -1,4 +1,4 @@
-name: Generate Separate Metrics
+name: Isometric Commit Calendar
 
 on:
   workflow_dispatch:
@@ -12,62 +12,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: User Account Metrics
+      - name: Full-year isometric commit calendar
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.user.svg
+          filename: metrics.plugin.isocalendar.fullyear.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: header, activity, community, repositories, metadata
-          config_timezone: Asia/Seoul
-          template: classic
-
-
-      # ⭐ Recently Starred Repositories
-      - name: Recently Starred Repos
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.stars.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
-          plugin_stars: yes
-          plugin_stars_limit: 3
-          plugin_stars_types: recent
-          # ⚠️ plugin_stars_limit_languages 제거됨
-
-      # 🈷️ Languages
-      - name: Most Used Languages
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.languages.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
-          plugin_languages: yes
-          plugin_languages_ignored: html, css
-          plugin_languages_details: bytes-size, percentage
-          plugin_languages_limit: 8
-
-      # 💡 Coding Habits
-      - name: Coding Habits
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.habits.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          base: ""
-          plugin_habits: yes
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
-
-      # 📅 Isometric Commit Calendar
-      - name: Isometric Commit Calendar
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.isocalendar.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
           base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
