@@ -1,4 +1,5 @@
 <!-- 타이틀 부분 -->
+
 <img src="https://capsule-render.vercel.app/api?type=blur&color=gradient&height=300&section=header&text=Hello!+I'm+Sooin+Jung&fontSize=80" />
 
 <h2 align="center">🌟 Sooin 🌟</h2>
@@ -7,6 +8,23 @@
     <img src="https://img.shields.io/badge/☁_ABOUT_ME-a9bee0?style=for-the-badge&logoColor=white"/>
   </a>
 </p>
+
+```
+sooin_jung/
+└─ career/
+   ├─ 2025.06~Present/ 
+   │   └─ KETI/                         # Research Engineer (Korea Electronics Technology Institute)
+   │
+   ├─ 2024.08~2025.03/
+   │   └─ RICC_Lab/                     # Undergraduate Researcher (Robotics & Intelligent Control Center)
+   │
+   ├─ 2024.03~2024.10/
+   │   └─ REDITS_Co_Ltd/                # Industry-Academia Researcher (산학협력 연구원)
+   │
+   └─ 2020.03~2025.02/
+       └─ Sookmyung_Womens_University/  # B.S. in Artificial Intelligence
+
+```
 
 <!-- 📊 My Environments -->
 <h2 align="center">🌜 My Environments 🌛</h2>
