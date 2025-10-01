@@ -1,6 +1,7 @@
 name: Generate Separate Metrics
 on:
-  schedule: [{ cron: "0 0 * * *" }]
+  schedule:
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
@@ -21,18 +22,6 @@ jobs:
           config_timezone: Asia/Seoul
           template: classic
 
-      # 🏢 Organization Metrics (원하시면 org 이름으로 변경)
-      - name: Organization Metrics
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.org.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
-          user: github                # ← 조직 이름으로 교체 ex) KETI-Research
-          base: header, repositories
-          config_timezone: Asia/Seoul
-          template: classic
-
       # ⭐ Recently Starred Repositories
       - name: Recently Starred Repos
         uses: lowlighter/metrics@latest
@@ -44,7 +33,7 @@ jobs:
           plugin_stars: yes
           plugin_stars_limit: 3
           plugin_stars_types: recent
-          plugin_stars_limit_languages: yes
+          # ⚠️ plugin_stars_limit_languages 제거됨
 
       # 🈷️ Languages
       - name: Most Used Languages
