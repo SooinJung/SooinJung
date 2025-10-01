@@ -11,7 +11,7 @@
 <br/>
 
 <!-- 📊 My Environments -->
-<h2 align="center">📊 My Environments</h2>
+<h2 align="center">My Environments</h2>
 
 <table>
   <tr>
