@@ -2,8 +2,7 @@
 <img src="https://capsule-render.vercel.app/api?type=blur&color=gradient&height=300&section=header&text=Hello!+I'm+Sooin+Jung&fontSize=80" />
 
 <h2 align="center">Sooin</h2>
-[![About Me](https://img.shields.io/badge/📖_ABOUT_ME-8B0000?style=for-the-badge&logoColor=white)](https://sxxwings.notion.site/1699f65ecb4380239367c6415922db09?source=copy_link)
-
+[![About Me](https://img.shields.io/badge/📖_ABOUT_ME-8B0000?style=for-the-badge&logoColor=white)](https://sxxwings.notion.site/1699f65ecb438023967c6415922db09?source=copy_link)
 <!-- 📊 My Environments -->
 <h2 align="center">My Environments</h2>
 <table>
