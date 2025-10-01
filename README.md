@@ -2,12 +2,28 @@
 <img src="https://capsule-render.vercel.app/api?type=blur&color=gradient&height=300&section=header&text=Hello!+I'm+Sooin+Jung&fontSize=80" />
 
 <h2 align="center">About Me</h2>
-```diff
-2025.06 ~ Present: Research Engineer at KETI (Korea Electronics Technology Institute)
-! 2020.03 ~ 2025.02: B.S. in Artificial Intelligence, Sookmyung Women's University (SMWU)
-@@ 2024.08 ~ 2025.03: Undergraduate Researcher at RICC Lab. (Robotics & Intelligent Control Center) @@
-@@ 2024.03 ~ 2024.10: Industry-Academia Researcher at REDITS Co., Ltd. @@
-```
+<table>
+  <tr>
+    <td>🎓</td>
+    <td><b>2025.06 ~ Present</b></td>
+    <td>Research Engineer at KETI (Korea Electronics Technology Institute)</td>
+  </tr>
+  <tr>
+    <td>🎓</td>
+    <td><b>2020.03 ~ 2025.02</b></td>
+    <td>B.S. in Artificial Intelligence, Sookmyung Women's University (SMWU)</td>
+  </tr>
+  <tr>
+    <td>🔬</td>
+    <td><b>2024.08 ~ 2025.03</b></td>
+    <td>Undergraduate Researcher at RICC Lab. (Robotics & Intelligent Control Center)</td>
+  </tr>
+  <tr>
+    <td>💼</td>
+    <td><b>2024.03 ~ 2024.10</b></td>
+    <td>Industry-Academia Researcher at REDITS Co., Ltd.</td>
+  </tr>
+</table>
 
 <!-- 📊 My Environments -->
 <h2 align="center">My Environments</h2>
