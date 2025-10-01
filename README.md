@@ -63,7 +63,3 @@
   </tr>
 </table>
 
-## 🌱 Contributions
-<p align="center">
-  <img src="./metrics.plugin.isocalendar.fullyear.svg" alt="isometric commit calendar" />
-</p>
