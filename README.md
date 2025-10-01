@@ -34,11 +34,11 @@
       <!-- 📅 Isometric Commit Calendar -->
       <img src="./metrics.isocalendar.svg" alt="Isometric Commit Calendar" />
       <br/>
+      <br/>
       <p align="center">
         <!-- 🈷️ Languages -->
         <img src="./metrics.plugin.languages.svg" alt="Most Used Languages" />
       </p>
-      <br/>
     </td>
   </tr>
 </table>
