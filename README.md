@@ -59,7 +59,7 @@
 </div>
 
 <p align="center">
-  <img src="https://metrics.lecoq.io/Sooin?template=classic&isocalendar=1&isocalendar.duration=full-year&config.timezone=Asia%2FSeoul" />
+  <img src="https://metrics.lecoq.io/SooinJung?template=classic&isocalendar=1&isocalendar.duration=full-year&config.timezone=Asia%2FSeoul" />
 </p>
 <br/>
 <br/>
