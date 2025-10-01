@@ -32,33 +32,35 @@
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=Docker&logoColor=white"/>&nbsp
 </div>
 
-## 📊 My Contributions
-<img src="./metrics.plugin.isocalendar.fullyear.svg" alt="isometric commit calendar" />
+## 📊 My Environments
 
-<!-- <table>
+<table>
   <tr>
     <td valign="top" width="50%">
       <p align="center">
-        <img src="./metrics.user.svg" alt="User Metrics" />
+        <!-- 👤 User Account Metrics -->
+        <img src="./metrics.classic.svg" alt="User Account Metrics" />
       </p>
       <br/>
       <p align="center">
-        <img src="./metrics.org.svg" alt="Organization Metrics" />
+        <!-- ⭐ Recently Starred Repositories -->
+        <img src="./metrics.plugin.stars.svg" alt="Recently Starred Repositories" />
       </p>
       <br/>
     </td>
-
-  <td valign="top" width="50%">
-      <img src="./metrics.plugin.isocalendar.fullyear.svg" alt="isometric commit calendar" />
+    <td valign="top" width="50%">
+      <!-- 📅 Isometric Commit Calendar -->
+      <img src="./metrics.isocalendar.svg" alt="Isometric Commit Calendar" />
       <br/>
       <p align="center">
-        <img src="./metrics.languages.svg" alt="Languages" />
+        <!-- 🈷️ Languages -->
+        <img src="./metrics.plugin.languages.svg" alt="Most Used Languages" />
       </p>
       <br/>
       <p align="center">
-        <img src="./metrics.habits.svg" alt="Coding Habits" />
+        <!-- 💡 Coding Habits (Recent Activity) -->
+        <img src="./metrics.plugin.activity.svg" alt="Recent Activity" />
       </p>
     </td>
   </tr>
-</table> -->
-
+</table>
