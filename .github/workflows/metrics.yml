@@ -1,8 +1,9 @@
 name: Generate Separate Metrics
+
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -11,7 +12,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # 👤 User Account Metrics
       - name: User Account Metrics
         uses: lowlighter/metrics@latest
         with:
@@ -21,6 +21,7 @@ jobs:
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Seoul
           template: classic
+
 
       # ⭐ Recently Starred Repositories
       - name: Recently Starred Repos
