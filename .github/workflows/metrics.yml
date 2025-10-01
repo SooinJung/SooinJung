@@ -1,25 +1,47 @@
-name: Generate GitHub Metrics
+name: Zerohertz-style Metrics
 
 on:
-  schedule: [{cron: "0 0 * * *"}]  # 매일 0시 자동 업데이트
-  workflow_dispatch:               # 수동 실행도 가능
+  schedule: [{cron: "0 0 * * *"}]  # 매일 자동 업데이트
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate metrics
+      - name: Generate Zerohertz-style Metrics
         uses: lowlighter/metrics@latest
         with:
-          # 출력 파일명 (원하는 이름으로 변경 가능)
-          filename: metrics.plugin.isocalendar.fullyear.svg
-
-          # 토큰
+          filename: metrics.full.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
 
-          # 기본 정보 제외하고 깔끔하게
-          base: ""
+          # 💡 기본 설정
+          base: header, activity, community, repositories, metadata
+          config_timezone: Asia/Seoul
+          template: classic
+          config_order: base.header, isocalendar, languages, habits, base.activity
 
-          # 플러그인 활성화
+          # 📅 입체 잔디 (Isometric calendar)
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
+
+          # 🧠 커밋 습관
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+
+          # 🗣️ 활동량
+          plugin_activity: yes
+          plugin_activity_days: 14
+          plugin_activity_filter: all
+          plugin_activity_visibility: public
+          plugin_activity_limit: 5
+
+          # 💬 언어 비율
+          plugin_languages: yes
+          plugin_languages_ignored: html, css
+          plugin_languages_details: bytes-size, percentage
+          plugin_languages_limit: 8
