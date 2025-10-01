@@ -1,14 +1,13 @@
 <!-- 타이틀 부분 -->
 <img src="https://capsule-render.vercel.app/api?type=blur&color=gradient&height=300&section=header&text=Hello!+I'm+Sooin+Jung&fontSize=80" />
 
-## 👀 About Me
+<h2 align="center">About Me</h2>
 
-#### :raising_hand: I am a software engineer and AI researcher from South Korea.<br/>
-#### :mortar_board: Bachelor of Artificial Intelligence, Sookmyung Women's University(SMWU).
-#### 🏢 Currently working as a Research Engineer at KETI (Korea Electronics Technology Institute).  
-#### 🌐 Developing an MQTT-based messaging platform and conducting research on Multi-Modal Large Language Models (MLLM) using CCTV data.  
-<br/>
-<br/>
+2025.06 ~ Present: Research Engineer at KETI (Korea Electronics Technology Institute)  
+2020.03 ~ 2025.02: B.S. in Artificial Intelligence, Sookmyung Women's University (SMWU)  
+&nbsp;&nbsp;&nbsp;ㄴ 2024.08 ~ 2025.03: Undergraduate Researcher at RICC Lab. (Robotics & Intelligent Control Center)  
+&nbsp;&nbsp;&nbsp;ㄴ 2024.03 ~ 2024.10: Industry-Academia Researcher at REDITS Co., Ltd.
+
 
 <!-- 📊 My Environments -->
 <h2 align="center">My Environments</h2>
