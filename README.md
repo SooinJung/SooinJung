@@ -3,10 +3,11 @@
 
 <h2 align="center">About Me</h2>
 
-[32m2025.06 ~ Present[0m: [34mResearch Engineer at KETI (Korea Electronics Technology Institute)[0m  
-[32m2020.03 ~ 2025.02[0m: [34mB.S. in Artificial Intelligence, Sookmyung Women's University (SMWU)[0m  
-  [32m2024.08 ~ 2025.03[0m: [34mUndergraduate Researcher at RICC Lab. (Robotics & Intelligent Control Center)[0m  
-  [32m2024.03 ~ 2024.10[0m: [34mIndustry-Academia Researcher at REDITS Co., Ltd.[0m
+```text
+2025.06 ~ Present: Research Engineer at KETI (Korea Electronics Technology Institute)
+2020.03 ~ 2025.02: B.S. in Artificial Intelligence, Sookmyung Women's University (SMWU)
+    ㄴ 2024.08 ~ 2025.03: Undergraduate Researcher at RICC Lab. (Robotics & Intelligent Control Center)
+    ㄴ 2024.03 ~ 2024.10: Industry-Academia Researcher at REDITS Co., Ltd.
 
 
 <!-- 📊 My Environments -->
