@@ -16,7 +16,7 @@ sooin_jung/
    │   └─ KETI/                         # Research Engineer (Korea Electronics Technology Institute)
    │
    ├─ 2024.08~2025.03/
-   │   └─ RICC_Lab/                     # Undergraduate Researcher (Robotics & Intelligent Control Center)
+   │   └─ RICC_Lab/                     # Undergraduate Researcher (Research Institute for Creativity and Convergence)
    │
    ├─ 2024.03~2024.10/
    │   └─ REDITS_Co_Ltd/                # Industry-Academia Researcher (산학협력 연구원)
