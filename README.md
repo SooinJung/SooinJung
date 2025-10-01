@@ -3,7 +3,7 @@
 
 <h2 align="center">🌟 Sooin 🌟</h2>
 <p align="center">
-  <a href="https://sxxwings.notion.site/1699f65ecb438023967c6415922db09?source=copy_link">
+  <a href="https://sxxwings.notion.site/1699f65ecb4380239367c6415922db09">
     <img src="https://img.shields.io/badge/☁_ABOUT_ME-a9bee0?style=for-the-badge&logoColor=white"/>
   </a>
 </p>
