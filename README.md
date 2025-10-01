@@ -58,12 +58,6 @@
   <img src="https://img.shields.io/badge/jupyter-2C2C32.svg?style=for-the-badge&logo=jupyter&logoColor=F37726" />&nbsp
 </div>
 
-## 📊 My Developer Metrics
-<p align="center">
-  <img src="./metrics.full.svg" alt="Metrics" />
-</p>
-
-
 ## 🌱 Contributions
 <p align="center">
   <img src="./metrics.plugin.isocalendar.fullyear.svg" alt="isometric commit calendar" />
