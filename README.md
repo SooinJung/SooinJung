@@ -6,7 +6,7 @@
 + 2025.06 ~ Present: Research Engineer at KETI (Korea Electronics Technology Institute)
 ! 2020.03 ~ 2025.02: B.S. in Artificial Intelligence, Sookmyung Women's University (SMWU)
 @@   2024.08 ~ 2025.03: Undergraduate Researcher at RICC Lab. (Robotics & Intelligent Control Center) @@
-@@   2024.03 ~ 2024.10: Industry-Academia Researcher at REDITS Co., Ltd. @@
+@@   2024.03 ~ 2024.10: Industry-Academia Researcher at REDITS Co., Ltd. @@```
 
 <!-- 📊 My Environments -->
 <h2 align="center">My Environments</h2>
