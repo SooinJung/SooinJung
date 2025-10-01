@@ -58,6 +58,59 @@
   <img src="https://img.shields.io/badge/jupyter-2C2C32.svg?style=for-the-badge&logo=jupyter&logoColor=F37726" />&nbsp
 </div>
 
+
+---
+
+## 📊 My Developer Dashboard
+
+<table>
+  <tr>
+    <!-- 왼쪽 열: 프로필 / 활동 / 정보 -->
+    <td valign="top" width="50%">
+      
+      <!-- 기본 통계 카드 -->
+      <img src="https://github-readme-stats.vercel.app/api?username=pinksooin&show_icons=true&theme=tokyonight&rank_icon=github" alt="Stats" />
+      <br/>
+      
+      <!-- 최근 Star한 Repo 리스트 (수동 링크 or 자동화) -->
+      <h4>⭐ Recently Starred</h4>
+      <ul>
+        <li><a href="https://github.com/zerohertz">zerohertz</a></li>
+        <li><a href="https://github.com/anuraghazra/github-readme-stats">github-readme-stats</a></li>
+        <li><a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a></li>
+      </ul>
+
+      <!-- 활동 요약 -->
+      <h4>📈 Activity Summary</h4>
+      <ul>
+        <li>🌟 100+ Stars</li>
+        <li>🍴 20+ Forks</li>
+        <li>🗓️ Active streak ongoing!</li>
+      </ul>
+
+    </td>
+
+    <!-- 오른쪽 열: 잔디 + 습관 + 언어 -->
+    <td valign="top" width="50%">
+      
+      <!-- 입체 잔디 -->
+      <img src="./metrics.plugin.isocalendar.fullyear.svg" alt="isometric commit calendar" />
+      <br/>
+      
+      <!-- 커밋 습관 -->
+      <img src="https://metrics.lecoq.io/pinksooin?template=classic&habits=1&habits.charts=true&config.timezone=Asia%2FSeoul" alt="Habits"/>
+      <br/>
+
+      <!-- 언어 그래프 -->
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pinksooin&layout=compact&theme=tokyonight" alt="Languages"/>
+
+    </td>
+  </tr>
+</table>
+
+---
+
+
 ## 🌱 Contributions
 <p align="center">
   <img src="./metrics.plugin.isocalendar.fullyear.svg" alt="isometric commit calendar" />
