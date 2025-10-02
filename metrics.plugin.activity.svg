@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="368" class="">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="373" class="">
     <defs>
         <style/>
     </defs>
@@ -23,12 +23,12 @@
                                     </svg>
                                     <div class="content">
                                         Merged
-                                        <span class="issue">#56 UI: 시험 결과 버튼 추가</span>
+                                        <span class="issue">#60 Refactor: spec/video 백업 폴더 생성 및 정리</span>
                                     </div>
                                 </div>
                                 <div class="details">
                                     <div> in <span class="repo">KETI-validation-software/Validation_tool</span></div>
-                                    <div>2 files changed <span class="code">++68 --0</span></div>
+                                    <div>48 files changed <span class="code">++10 --121</span></div>
                                 </div>
                             </section>
                         </div>
@@ -40,12 +40,12 @@
                                     </svg>
                                     <div class="content">
                                         Opened
-                                        <span class="issue">#56 UI: 시험 결과 버튼 추가</span>
+                                        <span class="issue">#60 Refactor: spec/video 백업 폴더 생성 및 정리</span>
                                     </div>
                                 </div>
                                 <div class="details">
                                     <div> in <span class="repo">KETI-validation-software/Validation_tool</span></div>
-                                    <div>2 files changed <span class="code">++68 --0</span></div>
+                                    <div>48 files changed <span class="code">++10 --121</span></div>
                                 </div>
                             </section>
                         </div>
@@ -57,12 +57,12 @@
                                     </svg>
                                     <div class="content">
                                         Merged
-                                        <span class="issue">#49 update</span>
+                                        <span class="issue">#58 Feat: 시험 결과 페이지 추가</span>
                                     </div>
                                 </div>
                                 <div class="details">
                                     <div> in <span class="repo">KETI-validation-software/Validation_tool</span></div>
-                                    <div>2 files changed <span class="code">++7 --5</span></div>
+                                    <div>9 files changed <span class="code">++438 --11</span></div>
                                 </div>
                             </section>
                         </div>
@@ -74,12 +74,12 @@
                                     </svg>
                                     <div class="content">
                                         Opened
-                                        <span class="issue">#49 update</span>
+                                        <span class="issue">#58 Feat: 시험 결과 페이지 추가</span>
                                     </div>
                                 </div>
                                 <div class="details">
                                     <div> in <span class="repo">KETI-validation-software/Validation_tool</span></div>
-                                    <div>2 files changed <span class="code">++7 --5</span></div>
+                                    <div>9 files changed <span class="code">++438 --11</span></div>
                                 </div>
                             </section>
                         </div>
@@ -91,12 +91,12 @@
                                     </svg>
                                     <div class="content">
                                         Merged
-                                        <span class="issue">#48 Fix: digest auth 인증방식 이슈 해결</span>
+                                        <span class="issue">#57 Fix: form_validator의 constants.py 덮어씌우기 기본값 수정</span>
                                     </div>
                                 </div>
                                 <div class="details">
                                     <div> in <span class="repo">KETI-validation-software/Validation_tool</span></div>
-                                    <div>7 files changed <span class="code">++97 --99</span></div>
+                                    <div>6 files changed <span class="code">++33 --14</span></div>
                                 </div>
                             </section>
                         </div>
