@@ -21,7 +21,7 @@ sooin_jung/
    ├─ 2024.03~2024.10/
    │   └─ REDITS_Co_Ltd/                # Industry-Academia Researcher (산학협력 연구원)
    │
-   └─ 2020.03~2025.02/
+   └─ 2020.03~2025.08/
        └─ Sookmyung_Womens_University/  # B.S. in Artificial Intelligence
 
 ```
