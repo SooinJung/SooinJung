@@ -30,7 +30,7 @@ jobs:
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           base: ""
           plugin_stars: yes
-          plugin_stars_limit: 3
+          plugin_stars_limit: 4
 
       # 🈷️ Languages
       - name: Most Used Languages
