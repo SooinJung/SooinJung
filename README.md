@@ -13,7 +13,7 @@
 sooin_jung/
 └─ career/
    ├─ 2025.06~Present/ 
-   │   └─ KETI/                                                   # Research Engineer (Korea Electronics Technology Institute)
+   │   └─ KETI(Korea Electronics Technology Institute)/           # Research Engineer
    │       └─ Institute of Embedded Engineering of Korea/         # Outstanding Paper Presentation Award
    │
    ├─ 2024.08~2025.03/
