@@ -17,10 +17,10 @@ sooin_jung/
    │       └─ Institute of Embedded Engineering of Korea/         # Outstanding Paper Presentation Award
    │
    ├─ 2024.08~2025.03/
-   │   └─ RICC_Lab/                                               # Undergraduate Researcher (Research Institute for Creativity and Convergence)
+   │   └─ RICC_Lab/                                               # Undergraduate Researcher 
    │
    ├─ 2024.03~2024.10/
-   │   └─ REDITS_Co_Ltd/                                          # Industry-Academia Researcher (산학협력 연구원)
+   │   └─ REDITS_Co_Ltd/                                          # Working Student
    │
    └─ 2020.03~2025.08/
        └─ Sookmyung_Womens_University/                            # B.S. in IT Engineering (Artificial Intelligence)
