@@ -24,6 +24,9 @@ sooin_jung/
    │
    └─ 2020.03~2025.08/
        └─ Sookmyung_Womens_University/                            # B.S. in IT Engineering (Artificial Intelligence)
+       └─ 2023.09~2024.02/
+           └─ Frankfurt University of Applied Sciences/           # Exchange Student (Informatik)
+
 
 ```
 
