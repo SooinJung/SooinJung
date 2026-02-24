@@ -17,7 +17,7 @@ sooin_jung/
    │       └─ Institute of Embedded Engineering of Korea/         # Outstanding Paper Presentation Award
    │
    ├─ 2024.08~2025.03/
-   │   └─ RICC_Lab/                                               # Undergraduate Researcher 
+   │   └─ KIE_Lab/                                                # Undergraduate Researcher 
    │
    ├─ 2024.03~2024.10/
    │   └─ REDITS_Co_Ltd/                                          # Working Student
