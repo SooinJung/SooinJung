@@ -20,7 +20,7 @@ sooin_jung/
    │   └─ KIE_Lab/                                                # Undergraduate Researcher 
    │
    ├─ 2024.03~2024.10/
-   │   └─ REDITS_Co_Ltd/                                          # Working Student
+   │   └─ LEDDITS_Co_Ltd/                                         # Working Student
    │
    └─ 2020.03~2025.08/
        └─ Sookmyung_Womens_University/                            # B.S. in IT Engineering (Artificial Intelligence)
