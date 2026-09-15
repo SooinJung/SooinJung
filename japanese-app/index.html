@@ -229,6 +229,9 @@ rp{display:none}
 .stagehead p{margin:3px 0 0;font-size:11.5px;color:var(--ink-3)}
 .sh-lv{margin-left:auto;flex:none;font-family:"Jua",sans-serif;font-size:12.5px;padding:5px 11px;border-radius:999px;
   background:var(--surface);border:1.5px solid var(--line-2);color:var(--ink-2)}
+.skipbtn{flex:none;background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.6);color:#fff;
+  border-radius:999px;padding:5px 11px;font-size:11.5px;font-weight:700;white-space:nowrap;margin-left:8px}
+.skiprow{width:100%;margin-top:11px;font-size:13.5px;padding:10px 12px;font-family:"Gowun Dodum",sans-serif;font-weight:700}
 .lvb{display:inline-block;font-family:"Jua",sans-serif;font-size:10.5px;line-height:1;padding:4px 7px;
   border-radius:7px;letter-spacing:.03em;vertical-align:middle}
 .lvb.n5{background:var(--good-soft);color:var(--good);border:1px solid var(--good-line)}
@@ -297,6 +300,7 @@ rp{display:none}
         <p id="goalSub">하트도 에너지도 없어요. 원하는 만큼 계속 하세요.</p>
       </div>
     </div>
+    <div id="placeCard"></div>
     <div class="chips" id="stageNav"></div>
     <div id="pathRoot"></div>
   </main>
@@ -359,6 +363,11 @@ rp{display:none}
         <div class="seg" id="segGoal"><button data-g="20">20</button><button data-g="50">50</button><button data-g="100">100</button></div></div>
       <div class="setrow"><div class="lab"><b>화면 테마</b><span></span></div>
         <div class="seg" id="segTheme"><button data-t="system">시스템</button><button data-t="light">라이트</button><button data-t="dark">다크</button></div></div>
+    </div>
+    <h2 class="sect-h">건너뛰기</h2>
+    <div class="card">
+      <button class="btn ghost" id="placeBtn" style="width:100%">실력 테스트로 시작 단계 정하기</button>
+      <p style="margin:9px 0 0;font-size:11.5px;color:var(--ink-3)">단계·유닛 건너뛰기 시험은 학습 탭에서 바로 볼 수 있어요. 떨어져도 잃는 것은 없고, 몇 번이든 다시 볼 수 있어요.</p>
     </div>
     <h2 class="sect-h">음성</h2>
     <div class="card">
@@ -676,7 +685,7 @@ function mascot(key, mood, size){
 
 /* ── 저장소 ─────────────────────────────────────── */
 const KEY='mochi-jp-v1';
-const DEF={xp:0,streak:0,last:'',today:0,todayDate:'',done:{},wrong:{},fav:{},
+const DEF={xp:0,streak:0,last:'',today:0,todayDate:'',done:{},wrong:{},fav:{},placeDismissed:false,
   set:{kana:true,romaji:true,auto:true,speak:false,unlockAll:false,rate:0.9,goal:50,theme:'system',voice:''}};
 let S = load();
 function load(){ try{ const r=localStorage.getItem(KEY); if(!r) return JSON.parse(JSON.stringify(DEF));
@@ -743,6 +752,10 @@ function renderPath(){
     const head=el('div','stagehead'+(si===0?' first':'')); head.id='stage-'+st.id;
     head.innerHTML='<div><b>'+st.n+'</b><p>'+st.d+'</p></div><span class="sh-lv">'+st.lv+'</span>';
     root.appendChild(head);
+    if(sDone<sL.length && sL.length){
+      const tb=el('button','btn ghost skiprow','⏭  이 단계 건너뛰기 시험  ·  '+st.lv);
+      tb.onclick=()=>openTest(stageTest(st)); root.appendChild(tb);
+    }
   sUnits.forEach(u=>{
     const ls = LESSONS.filter(l=>l.unit===u.id);
     const doneN = ls.filter(l=>S.done[l.id]).length;
@@ -751,6 +764,10 @@ function renderPath(){
     bar.innerHTML = '<span class="um">'+mascot(u.char, doneN===ls.length?'happy':'idle',46)+'</span>'
       + '<div><h2>'+u.title+'</h2><div class="jpt">'+u.jp+'</div></div>'
       + '<span class="cnt">'+doneN+'/'+ls.length+'</span>';
+    if(doneN<ls.length){
+      const sb=el('button','skipbtn','⏭ 건너뛰기');
+      sb.onclick=()=>openTest(unitTest(u)); bar.appendChild(sb);
+    }
     box.appendChild(bar);
     const path = el('div','path');
     ls.forEach(l=>{
@@ -812,8 +829,8 @@ function startLesson(items, id, char, color){
   renderQ();
 }
 function quitLesson(){ if(window.speechSynthesis) speechSynthesis.cancel();
-  $('#lesson').hidden=true; document.body.style.overflow=''; L=null; renderPath(); renderTop(); renderReview(); }
-$('#quitBtn').onclick=()=>{ if(!L) return; if(L.i>0 && !confirm('레슨을 나갈까요? 지금까지 얻은 XP는 저장돼요.')) return;
+  $('#lesson').hidden=true; document.body.style.overflow=''; L=null; renderTop(); renderPlaceCard(); renderPath(); renderReview(); }
+$('#quitBtn').onclick=()=>{ if(!L){ quitLesson(); return; } if(L.i>0 && !confirm('레슨을 나갈까요? 지금까지 얻은 XP는 저장돼요.')) return;
   if(L.xp){ S.xp+=L.xp; S.today+=L.xp; save(); } quitLesson(); };
 
 function readingHTML(it){
@@ -985,8 +1002,9 @@ function grade(ok, it, correct){
   } else {
     L.wrong++; S.wrong[it.id]=(S.wrong[it.id]||0)+1;
     if(!L.mistakes.includes(it.id)) L.mistakes.push(it.id);
-    const r=Object.assign({},q,{retry:true}); L.queue.push(r);
+    if(!L.test){ const r=Object.assign({},q,{retry:true}); L.queue.push(r); }
   }
+  if(L.byLv){ const b=L.byLv[it.lv]=L.byLv[it.lv]||{ok:0,n:0}; b.n++; if(ok) b.ok++; }
   save();
   fb.className='fb '+(ok?'ok':'no'); fb.innerHTML='';
   const msg=el('div','msg');
@@ -1006,6 +1024,7 @@ function grade(ok, it, correct){
 }
 
 function finish(){
+  if(L.test) return finishTest();
   const acc = L.total? Math.round((L.total-L.wrong)/L.total*100):100;
   const bonus = 20 + (acc===100?15:0);
   L.xp+=bonus; S.xp+=L.xp; S.today+=L.xp;
@@ -1013,7 +1032,7 @@ function finish(){
   save();
   const body=$('#lbody'), fb=$('#fb');
   fb.className='fb'; fb.innerHTML=''; body.innerHTML='';
-  $('#progBar').style.width='100%';
+  $('#progBar').style.width='100%'; $('#lXp').textContent=L.xp;
   const w=el('div','done-wrap');
   w.innerHTML = '<div class="bounce">'+mascot(L.char,'happy',130)+'</div>'
     + '<h2>'+(acc===100?'완벽해요!':'레슨 완료!')+'</h2>'
@@ -1025,6 +1044,119 @@ function finish(){
   const again=el('button','btn good','계속 학습하기'); again.style.width='100%';
   again.onclick=()=>{ quitLesson(); };
   fb.appendChild(again);
+}
+
+/* ── 건너뛰기 시험 ─────────────────────────────── */
+function testTypes(it){
+  const t=typesFor(it).filter(x=>x!=='speak');
+  const hard=t.filter(x=>x!=='meaning');
+  return hard.length?hard:t;
+}
+function openTest(cfg){
+  if(window.speechSynthesis) speechSynthesis.cancel();
+  L=null;
+  $('#lesson').hidden=false; document.body.style.overflow='hidden';
+  $('#progBar').style.width='0%'; $('#lXp').textContent='0';
+  const body=$('#lbody'), fb=$('#fb'); fb.className='fb'; fb.innerHTML=''; body.innerHTML='';
+  const w=el('div','done-wrap');
+  w.innerHTML='<div>'+mascot(cfg.char||'mochi','wink',112)+'</div>'
+   +'<h2>'+cfg.title+'</h2>'
+   +'<p style="color:var(--ink-2);font-size:13.5px;margin:7px 0 0;max-width:34ch">'+cfg.desc+'</p>'
+   +'<div class="scores"><div class="score"><b>'+cfg.items.length+'</b><span>문제</span></div>'
+   +(cfg.pass?'<div class="score"><b>'+cfg.pass+'%</b><span>통과 기준</span></div>':'')+'</div>'
+   +'<p style="color:var(--ink-3);font-size:12px;margin:0;max-width:30ch">떨어져도 잃는 건 없어요. 몇 번이든 다시 볼 수 있어요.</p>';
+  body.appendChild(w);
+  const go=el('button','btn','시험 시작'); go.style.width='100%'; go.onclick=()=>startTest(cfg);
+  const no=el('button','btn ghost','나중에 할래요'); no.style.cssText='width:100%;margin-top:8px'; no.onclick=quitLesson;
+  fb.append(go,no);
+}
+function startTest(cfg){
+  touchDay();
+  L={queue:shuffle(cfg.items).map(it=>{const t=testTypes(it);return makeQ(it,t[Math.random()*t.length|0]);}),
+     i:0, xp:0, wrong:0, total:0, id:null, byLv:{}, mistakes:[],
+     char:cfg.char||'mochi', color:cfg.color||'#E0603B', test:cfg};
+  renderQ();
+}
+function finishTest(){
+  const cfg=L.test, acc=L.total?Math.round((L.total-L.wrong)/L.total*100):0;
+  const r=cfg.resolve(L,acc);
+  let gain=L.xp+(r.passed?40:10), skipped=0;
+  (r.doneIds||[]).forEach(id=>{ if(!S.done[id]){ S.done[id]=true; skipped++; gain+=15; } });
+  L.xp=gain; S.xp+=gain; S.today+=gain; save();
+  const body=$('#lbody'), fb=$('#fb'); fb.className='fb'; fb.innerHTML=''; body.innerHTML='';
+  $('#progBar').style.width='100%'; $('#lXp').textContent=gain;
+  const w=el('div','done-wrap');
+  w.innerHTML='<div'+(r.passed?' class="bounce"':'')+'>'+mascot(cfg.char||'mochi',r.passed?'happy':'sad',124)+'</div>'
+   +'<h2>'+r.title+'</h2>'
+   +'<p style="color:var(--ink-2);font-size:13.5px;margin:7px 0 0;max-width:36ch">'+r.desc+'</p>'
+   +'<div class="scores"><div class="score"><b>'+acc+'%</b><span>정확도</span></div>'
+   +'<div class="score"><b>+'+gain+'</b><span>획득 XP</span></div>'
+   +(skipped?'<div class="score"><b>'+skipped+'</b><span>건너뛴 레슨</span></div>':'')+'</div>'
+   +(L.mistakes.length?'<p style="color:var(--ink-3);font-size:12px;margin:0">틀린 '+L.mistakes.length+'문장은 복습 탭에 모아 뒀어요.</p>':'');
+  body.appendChild(w);
+  const main=el('button','btn'+(r.passed?' good':''), r.passed?'좋아요!':'다시 도전하기');
+  main.style.width='100%';
+  main.onclick=()=> r.passed ? quitLesson() : openTest(cfg);
+  fb.appendChild(main);
+  if(!r.passed){ const back=el('button','btn ghost','차근차근 배울래요');
+    back.style.cssText='width:100%;margin-top:8px'; back.onclick=quitLesson; fb.appendChild(back); }
+}
+const PASS=80;
+function unitTest(u){
+  const ls=LESSONS.filter(l=>l.unit===u.id);
+  return {char:u.char, color:u.color, items:u.items, pass:PASS,
+    title:'「'+u.title+'」 건너뛰기',
+    desc:'이 유닛 '+u.items.length+'문장이 한 번씩 나와요. 통과하면 레슨 '+ls.length+'개가 한 번에 완료돼요.',
+    resolve:(L,acc)=> acc>=PASS
+      ? {passed:true,title:'통과!',desc:'「'+u.title+'」를 건너뛰었어요. 나중에 아무 레슨이나 눌러 다시 볼 수 있어요.',doneIds:ls.map(l=>l.id)}
+      : {passed:false,title:'아직 조금 남았어요',desc:'정확도 '+acc+'%. '+PASS+'% 이상이면 건너뛸 수 있어요.'}};
+}
+function stageTest(st){
+  const sU=UNITS.filter(u=>u.stage===st.id), pool=sU.flatMap(u=>u.items);
+  const items=sample(pool, Math.min(12,pool.length));
+  const ls=LESSONS.filter(l=>sU.some(u=>u.id===l.unit));
+  return {char:sU[0].char, color:sU[0].color, items:items, pass:PASS,
+    title:st.n+' 건너뛰기',
+    desc:'이 단계 '+sU.length+'개 유닛에서 '+items.length+'문장을 뽑았어요. 통과하면 레슨 '+ls.length+'개가 한 번에 완료돼요.',
+    resolve:(L,acc)=> acc>=PASS
+      ? {passed:true,title:'단계 통과!',desc:'「'+st.n+'」를 통째로 건너뛰었어요. 다음 단계부터 시작하세요.',doneIds:ls.map(l=>l.id)}
+      : {passed:false,title:'조금만 더',desc:'정확도 '+acc+'%. '+PASS+'% 이상이면 이 단계를 건너뛸 수 있어요. 유닛 하나씩 건너뛰기도 가능해요.'}};
+}
+const PLACE_STAGES={N5:['s1'],N4:['s1','s2','s3','s4'],N3:['s1','s2','s3','s4','s5'],N2:['s1','s2','s3','s4','s5','s6']};
+function placementTest(){
+  const pick=lv=>sample(ALL.filter(x=>x.lv===lv),3);
+  const items=[].concat(pick('N5'),pick('N4'),pick('N3'),pick('N2'));
+  return {char:'tori', color:'#2B6CB0', items:items, pass:0,
+    title:'실력 테스트',
+    desc:'N5부터 N2까지 12문장이 나와요. 맞힌 수준까지 단계를 한 번에 열어 드릴게요. 모르면 찍지 말고 넘겨도 괜찮아요.',
+    resolve:(L)=>{
+      let best=null;
+      ['N5','N4','N3','N2'].forEach(lv=>{ const r=L.byLv[lv]; if(r && r.ok>=2) best=lv; });
+      const sc=['N5','N4','N3','N2'].map(lv=>{const r=L.byLv[lv]||{ok:0,n:0};return lv+' '+r.ok+'/'+r.n;}).join(' · ');
+      if(!best) return {passed:true,title:'1단계부터 시작해요',
+        desc:'기초부터 차근차근 가는 게 결국 가장 빨라요. 인사말부터 시작할게요. ('+sc+')'};
+      const sids=PLACE_STAGES[best];
+      const ids=LESSONS.filter(l=>{ const u=UNITS.find(x=>x.id===l.unit); return sids.indexOf(u.stage)>-1; }).map(l=>l.id);
+      const nx=STAGES[STAGES.findIndex(x=>x.id===sids[sids.length-1])+1];
+      return {passed:true, title:best+' 수준으로 확인됐어요',
+        desc:(nx?'「'+nx.n+'」부터 시작할게요. 앞 단계는 완료 처리했어요.':'모든 단계를 완료 처리했어요. 복습 탭에서 마음껏 돌려 보세요.')+' ('+sc+')',
+        doneIds:ids};
+    }};
+}
+function renderPlaceCard(){
+  const pc=$('#placeCard'); if(!pc) return; pc.innerHTML='';
+  if(Object.keys(S.done).length>0 || S.placeDismissed) return;
+  const c=el('div','card');
+  c.style.cssText='display:flex;gap:11px;align-items:center;margin-top:16px;border-color:var(--accent);border-width:1.5px';
+  c.innerHTML='<span style="flex:none">'+mascot('tori','wink',52)+'</span>'
+   +'<div style="flex:1;min-width:0"><b class="disp" style="font-size:14.5px">이미 일본어를 좀 아세요?</b>'
+   +'<p style="margin:2px 0 0;font-size:12px;color:var(--ink-2)">12문제 풀고 시작 단계를 건너뛰세요.</p></div>';
+  const go=el('button','btn','시작'); go.style.cssText='flex:none;padding:10px 15px;font-size:14px';
+  go.onclick=()=>openTest(placementTest());
+  const x=el('button','xbtn','\u00d7'); x.style.cssText='flex:none;font-size:21px;padding:0 2px';
+  x.setAttribute('aria-label','실력 테스트 안내 닫기');
+  x.onclick=()=>{ S.placeDismissed=true; save(); renderPlaceCard(); };
+  c.append(go,x); pc.appendChild(c);
 }
 
 /* ── 문장집 ─────────────────────────────────────── */
@@ -1127,6 +1259,7 @@ function renderVoices(){
     if(jaVoice&&v.voiceURI===jaVoice.voiceURI) o.selected=true; sel.appendChild(o); });
   sel.onchange=()=>{ S.set.voice=sel.value; save(); jaVoice=voices.find(v=>v.voiceURI===sel.value)||jaVoice; speak('よろしくお願いします。',false); };
 }
+$('#placeBtn').onclick=()=>openTest(placementTest());
 $('#voiceTest').onclick=()=>speak('はじめまして。よろしくお願いします。',false);
 $('#resetBtn').onclick=()=>{ if(!confirm('학습 기록(XP·연속일·완료 레슨·즐겨찾기)을 모두 지울까요? 되돌릴 수 없어요.')) return;
   S=JSON.parse(JSON.stringify(DEF)); save(); applyTheme(); renderAll(); toast('기록을 모두 지웠어요.'); };
@@ -1145,7 +1278,7 @@ document.querySelectorAll('.tab').forEach(t=>{
 });
 
 /* ── 부팅 ───────────────────────────────────────── */
-function renderAll(){ renderTop(); renderPath(); renderBook(); renderReview();
+function renderAll(){ renderTop(); renderPlaceCard(); renderPath(); renderBook(); renderReview();
   $('#brandMascot').innerHTML=mascot('mochi','wink',30);
   $('#meMascot').innerHTML=mascot('mochi','happy',58); }
 bindSwitch('#swKana','kana',()=>{renderBook();renderReview();});
