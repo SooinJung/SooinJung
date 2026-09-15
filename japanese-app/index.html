@@ -18,7 +18,7 @@
   --good:#3F9457; --good-soft:#E6F2E8; --good-line:#9ED0AC;
   --bad:#CE4049; --bad-soft:#FBE8E8; --bad-line:#EBAAAE;
   --gold:#E3A62B;
-  --sakura:#F2A0B4;
+  --sakura:#F2A0B4; --purple:#6B5BB5;
   --radius:18px;
   --sh:0 3px 0 var(--line-2);
   color-scheme:light;
@@ -32,7 +32,7 @@
     --indigo:#86A8E6; --indigo-soft:#222D44;
     --good:#5FBC77; --good-soft:#182E1F; --good-line:#2F5C3C;
     --bad:#E96A72; --bad-soft:#331A1D; --bad-line:#5E2E33;
-    --gold:#F0BF52;
+    --gold:#F0BF52; --purple:#A192E8;
     --sh:0 3px 0 var(--line-2);
     color-scheme:dark;
   }
@@ -45,7 +45,7 @@
   --indigo:#86A8E6; --indigo-soft:#222D44;
   --good:#5FBC77; --good-soft:#182E1F; --good-line:#2F5C3C;
   --bad:#E96A72; --bad-soft:#331A1D; --bad-line:#5E2E33;
-  --gold:#F0BF52;
+  --gold:#F0BF52; --purple:#A192E8;
   color-scheme:dark;
 }
 
@@ -156,7 +156,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .bubble{background:var(--surface);border:1.5px solid var(--line-2);border-radius:16px;padding:12px 14px;position:relative;flex:1;min-width:0}
 .bubble:before{content:"";position:absolute;left:-8px;top:22px;width:14px;height:14px;background:var(--surface);
   border-left:1.5px solid var(--line-2);border-bottom:1.5px solid var(--line-2);transform:rotate(45deg)}
-.bubble .big{font-family:"Zen Maru Gothic",sans-serif;font-size:23px;font-weight:700;line-height:1.45;word-break:break-word}
+.bubble .big{font-family:"Zen Maru Gothic",sans-serif;font-size:23px;font-weight:700;line-height:1.85;word-break:break-word}
 .bubble .rd{font-size:12.5px;color:var(--ink-2);margin-top:4px;font-family:"Zen Maru Gothic",sans-serif}
 .bubble .ro{font-size:11.5px;color:var(--ink-3);letter-spacing:.02em}
 .bubble .ko{font-size:17px;font-weight:700}
@@ -171,7 +171,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .choice{width:100%;text-align:left;background:var(--surface);border:1.5px solid var(--line-2);
   border-bottom-width:4px;border-radius:14px;padding:13px 15px;font-size:15.5px;transition:transform .08s}
 .choice:active{transform:translateY(2px)}
-.choice .j{font-family:"Zen Maru Gothic",sans-serif;font-size:17px;font-weight:500;display:block}
+.choice .j{font-family:"Zen Maru Gothic",sans-serif;font-size:17px;font-weight:500;display:block;line-height:1.85}
 .choice .s{font-size:11.5px;color:var(--ink-3);display:block;margin-top:1px}
 .choice.sel{border-color:var(--indigo);background:var(--indigo-soft)}
 .choice.ok{border-color:var(--good-line);background:var(--good-soft)}
@@ -216,13 +216,25 @@ button{font:inherit;color:inherit;cursor:pointer}
 .fchip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
 .prow{display:flex;gap:11px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
 .prow .txt{flex:1;min-width:0}
-.prow .j{font-family:"Zen Maru Gothic",sans-serif;font-size:17px;font-weight:500;word-break:break-word}
+.prow .j{font-family:"Zen Maru Gothic",sans-serif;font-size:17px;font-weight:500;word-break:break-word;line-height:1.9}
 .prow .k{font-size:13px;color:var(--ink-2)}
 .prow .r{font-size:11px;color:var(--ink-3)}
+ruby{ruby-position:over;-webkit-ruby-position:before}
+rt{font-size:.48em;font-weight:400;color:var(--ink-3);letter-spacing:.02em;text-align:center;
+   font-family:"Zen Maru Gothic",sans-serif;user-select:none}
+rp{display:none}
+.stagehead{display:flex;align-items:flex-end;gap:10px;margin:34px 0 0;padding-top:20px;border-top:2px dashed var(--line-2)}
+.stagehead.first{border-top:0;padding-top:0;margin-top:20px}
+.stagehead b{font-family:"Jua",sans-serif;font-weight:400;font-size:17px;display:block;line-height:1.2}
+.stagehead p{margin:3px 0 0;font-size:11.5px;color:var(--ink-3)}
+.sh-lv{margin-left:auto;flex:none;font-family:"Jua",sans-serif;font-size:12.5px;padding:5px 11px;border-radius:999px;
+  background:var(--surface);border:1.5px solid var(--line-2);color:var(--ink-2)}
 .lvb{display:inline-block;font-family:"Jua",sans-serif;font-size:10.5px;line-height:1;padding:4px 7px;
   border-radius:7px;letter-spacing:.03em;vertical-align:middle}
 .lvb.n5{background:var(--good-soft);color:var(--good);border:1px solid var(--good-line)}
 .lvb.n4{background:var(--indigo-soft);color:var(--indigo);border:1px solid color-mix(in srgb,var(--indigo) 38%,transparent)}
+.lvb.n3{background:color-mix(in srgb,var(--purple) 14%,transparent);color:var(--purple);border:1px solid color-mix(in srgb,var(--purple) 42%,transparent)}
+.lvb.n2{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 44%,transparent)}
 .lvb.kn{background:color-mix(in srgb,var(--gold) 16%,transparent);color:var(--gold);border:1px solid color-mix(in srgb,var(--gold) 48%,transparent)}
 .prow .tp{font-size:11.5px;color:var(--ink-2);margin-top:5px;padding-left:9px;border-left:2px solid var(--accent)}
 .iconbtn{background:var(--surface-2);border:1.5px solid var(--line-2);border-radius:11px;width:38px;height:38px;
@@ -285,6 +297,7 @@ button{font:inherit;color:inherit;cursor:pointer}
         <p id="goalSub">하트도 에너지도 없어요. 원하는 만큼 계속 하세요.</p>
       </div>
     </div>
+    <div class="chips" id="stageNav"></div>
     <div id="pathRoot"></div>
   </main>
 
@@ -308,6 +321,8 @@ button{font:inherit;color:inherit;cursor:pointer}
     </div>
     <button class="btn" id="revStart" style="width:100%;margin-top:11px" disabled>약점 복습 시작</button>
     <button class="btn ghost" id="mixStart" style="width:100%;margin-top:9px">배운 것 전체 랜덤 복습</button>
+    <h2 class="sect-h">단계별 진도 <span>N5에서 N2까지</span></h2>
+    <div class="card" id="stageProg"></div>
     <h2 class="sect-h">⭐ 즐겨찾기 <span id="favCount"></span></h2>
     <div id="favList"></div>
   </main>
@@ -328,7 +343,7 @@ button{font:inherit;color:inherit;cursor:pointer}
     </div>
     <h2 class="sect-h">설정</h2>
     <div class="card">
-      <div class="setrow"><div class="lab"><b>후리가나(읽는 법) 표시</b><span>한자 위에 가나 읽기를 같이 보여줘요</span></div>
+      <div class="setrow"><div class="lab"><b>후리가나 표시</b><span>한자 위에 히라가나·가타카나 읽는 법을 올려 줘요</span></div>
         <button class="sw" role="switch" id="swKana"></button></div>
       <div class="setrow"><div class="lab"><b>로마자 표시</b><span>가나가 아직 어렵다면 켜 두세요</span></div>
         <button class="sw" role="switch" id="swRomaji"></button></div>
@@ -388,7 +403,7 @@ button{font:inherit;color:inherit;cursor:pointer}
    ══════════════════════════════════════════════════════════════ */
 
 const UNITS = [
-{ id:'u1', title:'첫 만남과 자기소개', jp:'はじめまして', color:'#E0603B', char:'mochi',
+{ id:'u1', title:'첫 만남과 자기소개', jp:'はじめまして', color:'#E0603B', char:'mochi', stage:'s1',
   items:[
   {lv:'N5',jp:'はじめまして。',kana:'はじめまして。',ro:'Hajimemashite.',ko:'처음 뵙겠습니다.',tip:'처음 만난 사람에게만 써요. 두 번째부터는 「こんにちは」.',chunks:['はじめまして']},
   {lv:'N5',jp:'よろしくお願いします。',kana:'よろしくおねがいします。',ro:'Yoroshiku onegai shimasu.',ko:'잘 부탁드립니다.',tip:'소개·부탁·업무 시작까지 다 되는 만능 인사. 일본 생활 최다 사용 문장.',chunks:['よろしく','お願いします']},
@@ -399,7 +414,7 @@ const UNITS = [
   {lv:'N4',jp:'ゆっくり話してもらえますか。',kana:'ゆっくりはなしてもらえますか。',ro:'Yukkuri hanashite moraemasu ka.',ko:'천천히 말해 주실 수 있나요?',tip:'N4 핵심 문형 「〜てもらえますか」. 동사만 바꾸면 모든 부탁에 써요.',chunks:['ゆっくり','話して','もらえますか']},
   {lv:'N5',jp:'大丈夫です。',kana:'だいじょうぶです。',ro:'Daijōbu desu.',ko:'괜찮아요.',tip:'수락도 거절도 되는 말이라 표정·억양이 중요해요.',chunks:['大丈夫です']}]},
 
-{ id:'u2', title:'편의점과 쇼핑', jp:'コンビニ・買い物', color:'#3C8D6E', char:'neko',
+{ id:'u2', title:'편의점과 쇼핑', jp:'コンビニ・買い物', color:'#3C8D6E', char:'neko', stage:'s1',
   items:[
   {lv:'N5',jp:'袋はいりません。',kana:'ふくろはいりません。',ro:'Fukuro wa irimasen.',ko:'봉투는 괜찮아요.',tip:'「レジ袋ご利用ですか」에 대한 대답. 봉투는 유료예요.',chunks:['袋は','いりません']},
   {lv:'N5',jp:'温めますか。',kana:'あたためますか。',ro:'Atatamemasu ka.',ko:'데워 드릴까요? (점원 말)',tip:'도시락을 사면 반드시 듣는 말. 「はい、お願いします」로 답해요.',chunks:['温めますか']},
@@ -410,7 +425,7 @@ const UNITS = [
   {lv:'N5',jp:'もう少し大きいサイズはありますか。',kana:'もうすこしおおきいサイズはありますか。',ro:'Mō sukoshi ōkii saizu wa arimasu ka.',ko:'조금 더 큰 사이즈 있나요?',tip:'「大きい」를 「小さい」「安い」로 바꿔 그대로 쓰세요.',chunks:['もう少し','大きいサイズは','ありますか']},
   {lv:'N5',jp:'レシートは大丈夫です。',kana:'レシートはだいじょうぶです。',ro:'Reshīto wa daijōbu desu.',ko:'영수증은 괜찮아요.',tip:'「大丈夫です」가 가장 부드러운 거절 방식이에요.',chunks:['レシートは','大丈夫です']}]},
 
-{ id:'u3', title:'역과 전철', jp:'駅・電車', color:'#2B6CB0', char:'tori',
+{ id:'u3', title:'역과 전철', jp:'駅・電車', color:'#2B6CB0', char:'tori', stage:'s1',
   items:[
   {lv:'N5',jp:'新宿までいくらですか。',kana:'しんじゅくまでいくらですか。',ro:'Shinjuku made ikura desu ka.',ko:'신주쿠까지 얼마예요?',tip:'N5 조사 「〜まで」는 목적지. 역 이름만 바꿔 쓰면 돼요.',chunks:['新宿まで','いくらですか']},
   {lv:'N5',jp:'この電車は渋谷に止まりますか。',kana:'このでんしゃはしぶやにとまりますか。',ro:'Kono densha wa Shibuya ni tomarimasu ka.',ko:'이 전철 시부야에 서나요?',tip:'急行·快速은 안 서는 역이 많아요. 타기 전에 꼭 확인!',chunks:['この電車は','渋谷に','止まりますか']},
@@ -421,7 +436,7 @@ const UNITS = [
   {lv:'N5',jp:'反対側のホームはどこですか。',kana:'はんたいがわのホームはどこですか。',ro:'Hantaigawa no hōmu wa doko desu ka.',ko:'반대편 승강장은 어디예요?',tip:'반대로 탔을 때. 개찰구를 한 번 나가야 하는 역도 있어요.',chunks:['反対側の','ホームは','どこですか']},
   {lv:'N5',jp:'終電は何時ですか。',kana:'しゅうでんはなんじですか。',ro:'Shūden wa nanji desu ka.',ko:'막차는 몇 시예요?',tip:'회식 자리에서 거의 매번 나오는 화제예요.',chunks:['終電は','何時ですか']}]},
 
-{ id:'u4', title:'식당과 카페', jp:'食事・カフェ', color:'#C1587C', char:'usa',
+{ id:'u4', title:'식당과 카페', jp:'食事・カフェ', color:'#C1587C', char:'usa', stage:'s1',
   items:[
   {lv:'N5',jp:'二人です。',kana:'ふたりです。',ro:'Futari desu.',ko:'두 명이요.',tip:'점원은 「何名様ですか」라고 물어요. 손님은 「二人です」면 충분해요.',chunks:['二人です']},
   {lv:'N5',jp:'おすすめは何ですか。',kana:'おすすめはなんですか。',ro:'O-susume wa nan desu ka.',ko:'추천 메뉴가 뭐예요?',tip:'메뉴를 못 읽어도 이 한마디면 해결돼요.',chunks:['おすすめは','何ですか']},
@@ -432,7 +447,7 @@ const UNITS = [
   {lv:'N5',jp:'持ち帰りでお願いします。',kana:'もちかえりでおねがいします。',ro:'Mochikaeri de onegai shimasu.',ko:'포장해 주세요.',tip:'매장에서 먹으면 「店内(てんない)で」.',chunks:['持ち帰りで','お願いします']},
   {lv:'慣',jp:'ごちそうさまでした。',kana:'ごちそうさまでした。',ro:'Gochisōsama deshita.',ko:'잘 먹었습니다.',tip:'통째로 외우는 인사말. 누가 사 줬다면 반드시 하세요.',chunks:['ごちそうさまでした']}]},
 
-{ id:'u5', title:'집 구하기와 관공서', jp:'住まい・役所', color:'#7566BE', char:'mochi',
+{ id:'u5', title:'집 구하기와 관공서', jp:'住まい・役所', color:'#7566BE', char:'mochi', stage:'s2',
   items:[
   {lv:'N5',jp:'部屋を探しています。',kana:'へやをさがしています。',ro:'Heya o sagashite imasu.',ko:'방을 찾고 있어요.',tip:'N5 진행형 「〜ています」. 부동산 문을 열고 하는 첫마디.',chunks:['部屋を','探しています']},
   {lv:'N5',jp:'家賃はいくらですか。',kana:'やちんはいくらですか。',ro:'Yachin wa ikura desu ka.',ko:'월세가 얼마예요?',tip:'家賃 외에 管理費(관리비)도 따로 있으니 꼭 확인하세요.',chunks:['家賃は','いくらですか']},
@@ -443,7 +458,7 @@ const UNITS = [
   {lv:'N4',jp:'この紙の書き方を教えてください。',kana:'このかみのかきかたをおしえてください。',ro:'Kono kami no kakikata o oshiete kudasai.',ko:'이 서류 쓰는 법을 알려 주세요.',tip:'N4 문형 「동사ます형＋方(かた)」＝ 〜하는 법. 관공서에서 제일 많이 쓰게 돼요.',chunks:['この紙の','書き方を','教えてください']},
   {lv:'N5',jp:'在留カードはこれです。',kana:'ざいりゅうカードはこれです。',ro:'Zairyū kādo wa kore desu.',ko:'재류카드 여기 있어요.',tip:'관공서·은행·병원 어디서든 요구해요. 항상 지참하세요.',chunks:['在留カードは','これです']}]},
 
-{ id:'u6', title:'병원과 약국', jp:'病院・薬局', color:'#3D97A3', char:'neko',
+{ id:'u6', title:'병원과 약국', jp:'病院・薬局', color:'#3D97A3', char:'neko', stage:'s2',
   items:[
   {lv:'N5',jp:'熱があります。',kana:'ねつがあります。',ro:'Netsu ga arimasu.',ko:'열이 나요.',tip:'N5 문형 「〜があります」로 증상을 말해요.',chunks:['熱が','あります']},
   {lv:'N5',jp:'お腹が痛いです。',kana:'おなかがいたいです。',ro:'Onaka ga itai desu.',ko:'배가 아파요.',tip:'頭(あたま)·喉(のど)·歯(は)로 바꿔 그대로 쓰세요.',chunks:['お腹が','痛いです']},
@@ -451,10 +466,10 @@ const UNITS = [
   {lv:'N5',jp:'保険証はこれです。',kana:'ほけんしょうはこれです。',ro:'Hokenshō wa kore desu.',ko:'보험증 여기 있어요.',tip:'접수에서 매번 요구하니 항상 지참하세요.',chunks:['保険証は','これです']},
   {lv:'N5',jp:'予約していません。',kana:'よやくしていません。',ro:'Yoyaku shite imasen.',ko:'예약은 안 했어요.',tip:'예약 없이 가는 병원도 많지만 대기가 길어요.',chunks:['予約して','いません']},
   {lv:'N5',jp:'薬アレルギーがあります。',kana:'くすりアレルギーがあります。',ro:'Kusuri arerugī ga arimasu.',ko:'약 알레르기가 있어요.',tip:'진료 전에 꼭 전달해야 하는 문장이에요.',chunks:['薬アレルギーが','あります']},
-  {lv:'N5',jp:'この薬は一日何回飲みますか。',kana:'このくすりはいちにちなんかいのみますか。',ro:'Kono kusuri wa ichinichi nankai nomimasu ka.',ko:'이 약은 하루 몇 번 먹나요?',tip:'약은 「食べる」가 아니라 「飲む」를 써요.',chunks:['この薬は','一日何回','飲みますか']},
+  {lv:'N5',rb:'この{薬|くすり}は{一日|いちにち}{何回|なんかい}{飲|の}みますか。',jp:'この薬は一日何回飲みますか。',kana:'このくすりはいちにちなんかいのみますか。',ro:'Kono kusuri wa ichinichi nankai nomimasu ka.',ko:'이 약은 하루 몇 번 먹나요?',tip:'약은 「食べる」가 아니라 「飲む」를 써요.',chunks:['この薬は','一日何回','飲みますか']},
   {lv:'N4',jp:'診断書をもらえますか。',kana:'しんだんしょをもらえますか。',ro:'Shindansho o moraemasu ka.',ko:'진단서를 받을 수 있을까요?',tip:'N4 가능형 「もらう→もらえる」. 회사에 병가를 낼 때 필요할 수 있어요.',chunks:['診断書を','もらえますか']}]},
 
-{ id:'u7', title:'회사에서 매일 쓰는 인사', jp:'会社の挨拶', color:'#C9871F', char:'tori',
+{ id:'u7', title:'회사에서 매일 쓰는 인사', jp:'会社の挨拶', color:'#C9871F', char:'tori', stage:'s3',
   items:[
   {lv:'N5',jp:'おはようございます。',kana:'おはようございます。',ro:'Ohayō gozaimasu.',ko:'안녕하세요 (아침 인사).',tip:'방송·요식업에서는 밤 출근에도 「おはようございます」라고 해요.',chunks:['おはよう','ございます']},
   {lv:'慣',jp:'お疲れ様です。',kana:'おつかれさまです。',ro:'Otsukaresama desu.',ko:'수고하십니다.',tip:'통째로 외우는 사내 만능 인사. 복도·메일·채팅 어디서든 이걸로 시작해요.',chunks:['お疲れ様です']},
@@ -465,7 +480,7 @@ const UNITS = [
   {lv:'N5',jp:'少々お待ちください。',kana:'しょうしょうおまちください。',ro:'Shōshō omachi kudasai.',ko:'잠시만 기다려 주세요.',tip:'N5 문형 「〜てください」의 정중 버전. 친한 사이엔 「ちょっと待ってください」.',chunks:['少々','お待ちください']},
   {lv:'慣',jp:'お疲れ様でした。',kana:'おつかれさまでした。',ro:'Otsukaresama deshita.',ko:'수고하셨습니다.',tip:'하루가 끝났을 때, 또는 상대가 먼저 퇴근할 때.',chunks:['お疲れ様でした']}]},
 
-{ id:'u8', title:'회사에서 보고하고 부탁하기', jp:'報告・お願い', color:'#2F5E9E', char:'mochi',
+{ id:'u8', title:'회사에서 보고하고 부탁하기', jp:'報告・お願い', color:'#2F5E9E', char:'mochi', stage:'s3',
   items:[
   {lv:'N5',jp:'すみません、今いいですか。',kana:'すみません、いまいいですか。',ro:'Sumimasen, ima ii desu ka.',ko:'죄송해요, 지금 잠깐 괜찮으세요?',tip:'상사에게 말을 걸 때 첫마디. 더 정중하게는 「今、お時間よろしいでしょうか」.',chunks:['すみません','今','いいですか']},
   {lv:'N5',jp:'質問があります。',kana:'しつもんがあります。',ro:'Shitsumon ga arimasu.',ko:'질문이 있습니다.',tip:'모르면 바로 묻는 게 일본 회사에서는 오히려 좋게 평가돼요.',chunks:['質問が','あります']},
@@ -476,7 +491,7 @@ const UNITS = [
   {lv:'N4',jp:'相談したいことがあります。',kana:'そうだんしたいことがあります。',ro:'Sōdan shitai koto ga arimasu.',ko:'상의드리고 싶은 것이 있습니다.',tip:'N4 문형 「〜たいこと」. 문제가 커지기 전에 먼저 말하는 것이 일본식 일하기(報連相)예요.',chunks:['相談したいことが','あります']},
   {lv:'N4',jp:'手伝ってもらえますか。',kana:'てつだってもらえますか。',ro:'Tetsudatte moraemasu ka.',ko:'좀 도와주실 수 있을까요?',tip:'N4 부탁 문형. 더 정중하게는 「手伝っていただけますか」.',chunks:['手伝って','もらえますか']}]},
 
-{ id:'u9', title:'전화와 메일', jp:'電話・メール', color:'#8A6A3B', char:'neko',
+{ id:'u9', title:'전화와 메일', jp:'電話・メール', color:'#8A6A3B', char:'neko', stage:'s3',
   items:[
   {lv:'慣',jp:'お世話になっております。',kana:'おせわになっております。',ro:'O-sewa ni natte orimasu.',ko:'늘 신세지고 있습니다.',tip:'사외 전화·메일의 첫 문장. 문법은 N3 이상이지만 통째로 외워 쓰는 인사말이에요.',chunks:['お世話に','なっております']},
   {lv:'慣',jp:'鄭と申します。',kana:'チョンともうします。',ro:'Chon to mōshimasu.',ko:'정이라고 합니다.',tip:'「〜と申します」는 「〜です」의 겸양 버전. 회사명＋の＋이름 순서로 말해요.',chunks:['鄭と','申します']},
@@ -487,18 +502,18 @@ const UNITS = [
   {lv:'慣',jp:'お電話ありがとうございました。',kana:'おでんわありがとうございました。',ro:'O-denwa arigatō gozaimashita.',ko:'전화 주셔서 감사합니다.',tip:'끊기 직전에. 상대가 끊은 뒤에 수화기를 내려요.',chunks:['お電話','ありがとうございました']},
   {lv:'N5',jp:'また連絡します。',kana:'またれんらくします。',ro:'Mata renraku shimasu.',ko:'또 연락드릴게요.',tip:'메일 맺음말은 「引き続きよろしくお願いいたします」가 1순위예요.',chunks:['また','連絡します']}]},
 
-{ id:'u10', title:'동료와 잡담·회식', jp:'雑談・飲み会', color:'#B8557E', char:'usa',
+{ id:'u10', title:'동료와 잡담·회식', jp:'雑談・飲み会', color:'#B8557E', char:'usa', stage:'s4',
   items:[
   {lv:'N5',jp:'週末どうでしたか。',kana:'しゅうまつどうでしたか。',ro:'Shūmatsu dō deshita ka.',ko:'주말 어떻게 보내셨어요?',tip:'월요일 아침 잡담을 여는 단골 질문.',chunks:['週末','どうでしたか']},
   {lv:'慣',jp:'とりあえずビールで。',kana:'とりあえずビールで。',ro:'Toriaezu bīru de.',ko:'일단 맥주로 할게요.',tip:'회식 첫 주문의 관용구. 「とりあえず」가 핵심이에요.',chunks:['とりあえず','ビールで']},
   {lv:'N4',jp:'お酒はあまり強くないんです。',kana:'おさけはあまりつよくないんです。',ro:'O-sake wa amari tsuyokunai n desu.',ko:'술은 별로 못 마셔요.',tip:'N4 문형 「〜んです」. 붙이면 사정 설명이 부드러워져요.',chunks:['お酒は','あまり','強くないんです']},
   {lv:'N5',jp:'乾杯！',kana:'かんぱい！',ro:'Kanpai!',ko:'건배!',tip:'잔은 윗사람 잔보다 살짝 낮게 부딪쳐요.',chunks:['乾杯']},
-  {lv:'N5',jp:'今度一緒に行きましょう。',kana:'こんどいっしょにいきましょう。',ro:'Kondo issho ni ikimashō.',ko:'다음에 같이 가요.',tip:'N5 권유형 「〜ましょう」. 대화를 기분 좋게 마무리할 때.',chunks:['今度','一緒に','行きましょう']},
+  {lv:'N5',rb:'{今度|こんど}{一緒|いっしょ}に{行|い}きましょう。',jp:'今度一緒に行きましょう。',kana:'こんどいっしょにいきましょう。',ro:'Kondo issho ni ikimashō.',ko:'다음에 같이 가요.',tip:'N5 권유형 「〜ましょう」. 대화를 기분 좋게 마무리할 때.',chunks:['今度','一緒に','行きましょう']},
   {lv:'N5',jp:'それ、いいですね。',kana:'それ、いいですね。',ro:'Sore, ii desu ne.',ko:'그거 좋네요.',tip:'「〜ね」는 공감 신호. 맞장구가 일본어 대화의 절반이에요.',chunks:['それ','いいですね']},
   {lv:'N4',jp:'実は韓国から来たんです。',kana:'じつはかんこくからきたんです。',ro:'Jitsu wa Kankoku kara kita n desu.',ko:'사실 한국에서 왔어요.',tip:'「実は」로 시작하면 자연스럽게 이야깃거리가 열려요.',chunks:['実は','韓国から','来たんです']},
   {lv:'N4',jp:'割り勘でいいですか。',kana:'わりかんでいいですか。',ro:'Warikan de ii desu ka.',ko:'더치페이로 할까요?',tip:'「割り勘」은 n분의 1. 회식에서 아주 흔해요.',chunks:['割り勘で','いいですか']}]},
 
-{ id:'u11', title:'면접과 이직', jp:'面接・転職', color:'#3E7A55', char:'tori',
+{ id:'u11', title:'면접과 이직', jp:'面接・転職', color:'#3E7A55', char:'tori', stage:'s4',
   items:[
   {lv:'N4',jp:'どうしてうちの会社を選びましたか。',kana:'どうしてうちのかいしゃをえらびましたか。',ro:'Dōshite uchi no kaisha o erabimashita ka.',ko:'왜 저희 회사를 고르셨나요? (면접관)',tip:'면접 최빈출 질문. 서류에는 「志望動機(しぼうどうき)」라고 적혀 있어요.',chunks:['どうして','うちの会社を','選びましたか']},
   {lv:'N4',jp:'御社の技術に興味があります。',kana:'おんしゃのぎじゅつにきょうみがあります。',ro:'Onsha no gijutsu ni kyōmi ga arimasu.',ko:'귀사의 기술에 관심이 있습니다.',tip:'N4 문형 「〜に興味があります」. 말할 땐 「御社」, 글로 쓸 땐 「貴社」.',chunks:['御社の技術に','興味が','あります']},
@@ -509,7 +524,7 @@ const UNITS = [
   {lv:'N5',jp:'研修について聞いてもいいですか。',kana:'けんしゅうについてきいてもいいですか。',ro:'Kenshū ni tsuite kiite mo ii desu ka.',ko:'연수에 대해 여쭤봐도 될까요?',tip:'격식 있게는 「伺えますか」. N4 수준에서는 이 문장으로 충분해요.',chunks:['研修について','聞いても','いいですか']},
   {lv:'慣',jp:'本日はありがとうございました。',kana:'ほんじつはありがとうございました。',ro:'Honjitsu wa arigatō gozaimashita.',ko:'오늘 감사했습니다.',tip:'「今日」보다 「本日」가 격식 있어요. 면접 마무리 인사로 통째로 외우세요.',chunks:['本日は','ありがとうございました']}]},
 
-{ id:'u12', title:'친구와 반말로', jp:'タメ口・友達', color:'#D9862B', char:'usa',
+{ id:'u12', title:'친구와 반말로', jp:'タメ口・友達', color:'#D9862B', char:'usa', stage:'s4',
   items:[
   {lv:'N5',jp:'元気？',kana:'げんき？',ro:'Genki?',ko:'잘 지내?',tip:'반말은 「です・ます」를 떼면 돼요.',chunks:['元気']},
   {lv:'N4',jp:'今何してる？',kana:'いまなにしてる？',ro:'Ima nani shiteru?',ko:'지금 뭐 해?',tip:'「している」에서 い가 빠지는 게 회화체예요.',chunks:['今','何してる']},
@@ -518,7 +533,61 @@ const UNITS = [
   {lv:'N4',jp:'ありがとう、助かった！',kana:'ありがとう、たすかった！',ro:'Arigatō, tasukatta!',ko:'고마워, 살았다!',tip:'「助かりました」의 반말 버전.',chunks:['ありがとう','助かった']},
   {lv:'N4',jp:'ごめん、ちょっと無理かも。',kana:'ごめん、ちょっとむりかも。',ro:'Gomen, chotto muri kamo.',ko:'미안, 좀 어려울 것 같아.',tip:'N4 표현 「〜かも」. 붙이면 거절이 훨씬 부드러워져요.',chunks:['ごめん','ちょっと','無理かも']},
   {lv:'N5',jp:'そうなんだ。',kana:'そうなんだ。',ro:'Sō nan da.',ko:'그렇구나.',tip:'반말 맞장구 1순위. 존댓말은 「そうなんですね」.',chunks:['そうなんだ']},
-  {lv:'N5',jp:'また今度ね。',kana:'またこんどね。',ro:'Mata kondo ne.',ko:'다음에 또 보자.',tip:'헤어질 때. 「またね」만 해도 충분해요.',chunks:['また','今度ね']}]}
+  {lv:'N5',jp:'また今度ね。',kana:'またこんどね。',ro:'Mata kondo ne.',ko:'다음에 또 보자.',tip:'헤어질 때. 「またね」만 해도 충분해요.',chunks:['また','今度ね']}]},
+{ id:'u13', title:'경어 제대로 쓰기', jp:'敬語をちゃんと', color:'#1F4E79', char:'mochi', stage:'s5',
+  items:[
+  {lv:'N3',jp:'ご確認いただけますでしょうか。',kana:'ごかくにんいただけますでしょうか。',ro:'Go-kakunin itadakemasu deshō ka.',ko:'확인 부탁드려도 될까요?',tip:'N3 의뢰 표현의 최상급. 메일 마무리 1순위예요. N4로는 「確認してもらえますか」.',chunks:['ご確認','いただけます','でしょうか']},
+  {lv:'N3',jp:'申し訳ございません、遅れております。',kana:'もうしわけございません、おくれております。',ro:'Mōshiwake gozaimasen, okurete orimasu.',ko:'죄송합니다, 늦어지고 있습니다.',tip:'「おる」는 「いる」의 겸양어. 업무 사과는 「すみません」이 아니라 이쪽을 써요.',chunks:['申し訳ございません','遅れております']},
+  {lv:'N3',jp:'資料をお送りいたします。',kana:'しりょうをおおくりいたします。',ro:'Shiryō o o-okuri itashimasu.',ko:'자료를 보내 드리겠습니다.',tip:'「お＋ます형＋いたします」가 겸양 공식. N4로는 「資料を送ります」.',chunks:['資料を','お送り','いたします']},
+  {lv:'N3',jp:'恐れ入りますが、もう一度お願いできますか。',kana:'おそれいりますが、もういちどおねがいできますか。',ro:'Osore irimasu ga, mō ichido onegai dekimasu ka.',ko:'죄송하지만 한 번 더 부탁드려도 될까요?',tip:'「恐れ入りますが」는 부탁 앞에 붙이는 쿠션말. 이거 하나로 인상이 달라져요.',chunks:['恐れ入りますが','もう一度','お願いできますか']},
+  {lv:'N3',jp:'折り返しお電話いたします。',kana:'おりかえしおでんわいたします。',ro:'Orikaeshi o-denwa itashimasu.',ko:'다시 전화드리겠습니다.',tip:'「折り返し」는 콜백. 부재중 전화 대응의 핵심 단어예요.',chunks:['折り返し','お電話','いたします']},
+  {lv:'N3',jp:'田中様はいらっしゃいますか。',kana:'たなかさまはいらっしゃいますか。',ro:'Tanaka-sama wa irasshaimasu ka.',ko:'다나카 님 계신가요?',tip:'「いらっしゃる」는 いる·行く·来る의 존경어. 사외 상대에게 필수.',chunks:['田中様は','いらっしゃいますか']},
+  {lv:'N3',jp:'明日までにご報告いたします。',kana:'あしたまでにごほうこくいたします。',ro:'Ashita made ni go-hōkoku itashimasu.',ko:'내일까지 보고드리겠습니다.',tip:'報連相(보고·연락·상담)의 보고. 기한을 먼저 말하면 신뢰가 쌓여요.',chunks:['明日までに','ご報告','いたします']},
+  {lv:'N3',jp:'引き続きよろしくお願いいたします。',kana:'ひきつづきよろしくおねがいいたします。',ro:'Hikitsuzuki yoroshiku onegai itashimasu.',ko:'앞으로도 잘 부탁드립니다.',tip:'비즈니스 메일 맺음말 1순위. 통째로 외워 두세요.',chunks:['引き続き','よろしく','お願いいたします']}]},
+
+{ id:'u14', title:'문제가 생겼을 때', jp:'トラブル・お詫び', color:'#A8443C', char:'neko', stage:'s5',
+  items:[
+  {lv:'N3',jp:'電車が遅れて、遅刻しそうです。',kana:'でんしゃがおくれて、ちこくしそうです。',ro:'Densha ga okurete, chikoku shisō desu.',ko:'전철이 늦어서 지각할 것 같아요.',tip:'N3 문형 「동사ます형＋そうです」＝ 〜할 것 같다. 遅延証明書도 챙기세요.',chunks:['電車が遅れて','遅刻し','そうです']},
+  {lv:'N3',jp:'財布をなくしてしまったんですが。',kana:'さいふをなくしてしまったんですが。',ro:'Saifu o nakushite shimatta n desu ga.',ko:'지갑을 잃어버렸는데요…',tip:'「〜んですが」로 끝내면 도와달라는 뜻이 전해져요. 일본에서 가장 유용한 서두.',chunks:['財布を','なくしてしまった','んですが']},
+  {lv:'N3',jp:'交番はどこにありますか。',kana:'こうばんはどこにありますか。',ro:'Kōban wa doko ni arimasu ka.',ko:'파출소는 어디에 있나요?',tip:'분실물은 交番이나 역무실(駅員室)로. 일본은 유실물이 돌아올 확률이 높아요.',chunks:['交番は','どこに','ありますか']},
+  {lv:'N3',jp:'ネットがつながらないんですが。',kana:'ネットがつながらないんですが。',ro:'Netto ga tsunagaranai n desu ga.',ko:'인터넷이 안 되는데요…',tip:'「つながる」는 연결되다. 「お湯が出ない」「エアコンが動かない」로 응용하세요.',chunks:['ネットが','つながらない','んですが']},
+  {lv:'N3',jp:'修理をお願いしたいんですが。',kana:'しゅうりをおねがいしたいんですが。',ro:'Shūri o onegai shitai n desu ga.',ko:'수리를 부탁드리고 싶은데요.',tip:'집 문제는 管理会社(관리회사)에 연락해요. 大家さん(집주인)이 아니라.',chunks:['修理を','お願いしたい','んですが']},
+  {lv:'N3',jp:'こちらのミスでした。申し訳ありません。',kana:'こちらのミスでした。もうしわけありません。',ro:'Kochira no misu deshita. Mōshiwake arimasen.',ko:'저희 실수였습니다. 죄송합니다.',tip:'변명보다 먼저 인정. 일본 직장에서는 이 순서가 훨씬 좋게 평가돼요.',chunks:['こちらの','ミスでした','申し訳ありません']},
+  {lv:'N3',jp:'二度と起こらないようにします。',kana:'にどとおこらないようにします。',ro:'Nido to okoranai yō ni shimasu.',ko:'다시는 일어나지 않도록 하겠습니다.',tip:'N3 문형 「〜ないようにします」. 사과 뒤에 재발 방지책을 붙이는 게 정석.',chunks:['二度と','起こらない','ようにします']},
+  {lv:'N3',jp:'ご迷惑をおかけしました。',kana:'ごめいわくをおかけしました。',ro:'Go-meiwaku o o-kake shimashita.',ko:'폐를 끼쳤습니다.',tip:'사과 메일의 고정 표현. 「ご迷惑をおかけして申し訳ございません」으로 이어 쓰세요.',chunks:['ご迷惑を','おかけしました']}]},
+
+{ id:'u15', title:'회의에서 의견 말하기', jp:'会議・意見', color:'#0F766E', char:'tori', stage:'s5',
+  items:[
+  {lv:'N3',jp:'私の意見を言ってもよろしいでしょうか。',kana:'わたしのいけんをいってもよろしいでしょうか。',ro:'Watashi no iken o itte mo yoroshii deshō ka.',ko:'제 의견을 말씀드려도 될까요?',tip:'「いいですか」의 정중형이 「よろしいでしょうか」. 회의에서 끼어들 때.',chunks:['私の意見を','言っても','よろしいでしょうか']},
+  {lv:'N3',jp:'その件について確認させてください。',kana:'そのけんについてかくにんさせてください。',ro:'Sono ken ni tsuite kakunin sasete kudasai.',ko:'그 건에 대해 확인하게 해 주세요.',tip:'N3 사역 문형 「〜させてください」＝ 제가 〜하게 해 주세요.',chunks:['その件について','確認させて','ください']},
+  {lv:'N3',jp:'こう思うのですが、いかがでしょうか。',kana:'こうおもうのですが、いかがでしょうか。',ro:'Kō omou no desu ga, ikaga deshō ka.',ko:'이렇게 생각하는데, 어떠신가요?',tip:'단정하지 않고 되묻는 게 일본식 회의 화법. 반대할 때도 이 형태로.',chunks:['こう思うのですが','いかが','でしょうか']},
+  {lv:'N3',jp:'スケジュールが厳しいかもしれません。',kana:'スケジュールがきびしいかもしれません。',ro:'Sukejūru ga kibishii kamo shiremasen.',ko:'일정이 빠듯할지도 모르겠습니다.',tip:'「無理です」라고 직접 말하지 않고 「厳しいかもしれません」으로 돌려 말해요.',chunks:['スケジュールが','厳しい','かもしれません']},
+  {lv:'N3',jp:'代わりの案を考えてみます。',kana:'かわりのあんをかんがえてみます。',ro:'Kawari no an o kangaete mimasu.',ko:'대안을 생각해 보겠습니다.',tip:'N3 문형 「〜てみます」＝ 〜해 보겠다. 반대 뒤에는 꼭 대안을 붙이세요.',chunks:['代わりの案を','考えて','みます']},
+  {lv:'N3',rb:'{念|ねん}のため、もう{一度|いちど}{確認|かくにん}します。',jp:'念のため、もう一度確認します。',kana:'ねんのため、もういちどかくにんします。',ro:'Nen no tame, mō ichido kakunin shimasu.',ko:'만약을 위해 한 번 더 확인하겠습니다.',tip:'「念のため」는 회의·메일에서 매일 듣는 부사예요.',chunks:['念のため','もう一度','確認します']},
+  {lv:'N3',jp:'すみません、話についていけませんでした。',kana:'すみません、はなしについていけませんでした。',ro:'Sumimasen, hanashi ni tsuite ikemasen deshita.',ko:'죄송해요, 이야기를 따라가지 못했어요.',tip:'못 알아들었을 때 솔직히 말하는 게 낫습니다. 모른 채 넘기는 게 제일 위험해요.',chunks:['すみません','話について','いけませんでした']},
+  {lv:'N3',jp:'議事録を共有します。',kana:'ぎじろくをきょうゆうします。',ro:'Gijiroku o kyōyū shimasu.',ko:'회의록을 공유하겠습니다.',tip:'議事録 작성은 신입의 단골 업무. 「共有します」는 사내 필수 동사예요.',chunks:['議事録を','共有します']}]},
+
+{ id:'u16', title:'비즈니스 메일', jp:'ビジネスメール', color:'#4B3F72', char:'usa', stage:'s6',
+  items:[
+  {lv:'N2',jp:'平素より大変お世話になっております。',kana:'へいそよりたいへんおせわになっております。',ro:'Heiso yori taihen o-sewa ni natte orimasu.',ko:'평소 많은 신세를 지고 있습니다.',tip:'사외 메일 첫 줄의 격식판. 사내라면 「お疲れ様です」로 충분해요.',chunks:['平素より','大変','お世話になっております']},
+  {lv:'N2',jp:'標題の件につきましてご連絡いたします。',kana:'ひょうだいのけんにつきましてごれんらくいたします。',ro:'Hyōdai no ken ni tsukimashite go-renraku itashimasu.',ko:'제목의 건에 대해 연락드립니다.',tip:'「につきまして」는 「について」의 격식형. 메일 본문 첫 문장에 씁니다.',chunks:['標題の件に','つきまして','ご連絡いたします']},
+  {lv:'N2',jp:'お忙しいところ恐縮ですが。',kana:'おいそがしいところきょうしゅくですが。',ro:'O-isogashii tokoro kyōshuku desu ga.',ko:'바쁘신 중에 죄송합니다만.',tip:'부탁 앞에 넣는 쿠션말. 「恐れ入りますが」보다 한 단계 더 정중해요.',chunks:['お忙しいところ','恐縮です','が']},
+  {lv:'N2',jp:'ご査収のほどよろしくお願いいたします。',kana:'ごさしゅうのほどよろしくおねがいいたします。',ro:'Go-sashū no hodo yoroshiku onegai itashimasu.',ko:'확인하시고 받아 주시기 바랍니다.',tip:'査収＝잘 살펴보고 받음. 반드시 첨부파일이 있을 때만 쓰세요. 없으면 실례예요.',chunks:['ご査収の','ほど','よろしくお願いいたします']},
+  {lv:'N2',jp:'下記の通りご報告申し上げます。',kana:'かきのとおりごほうこくもうしあげます。',ro:'Kaki no tōri go-hōkoku mōshiagemasu.',ko:'아래와 같이 보고드립니다.',tip:'「申し上げる」는 「言う」의 최상급 겸양어. 문서·보고 메일에 씁니다.',chunks:['下記の通り','ご報告','申し上げます']},
+  {lv:'N2',jp:'ご都合のよろしい日時をお知らせください。',kana:'ごつごうのよろしいにちじをおしらせください。',ro:'Go-tsugō no yoroshii nichiji o o-shirase kudasai.',ko:'편하신 일시를 알려 주세요.',tip:'일정 조율 메일의 정형문. 후보 날짜를 2~3개 같이 제시하면 좋아해요.',chunks:['ご都合のよろしい','日時を','お知らせください']},
+  {lv:'N2',jp:'ご不明な点がございましたらご連絡ください。',kana:'ごふめいなてんがございましたらごれんらくください。',ro:'Go-fumei na ten ga gozaimashitara go-renraku kudasai.',ko:'궁금한 점이 있으시면 연락 주세요.',tip:'「ございましたら」는 「あったら」의 겸양 조건형. 메일 끝에서 두 번째 줄.',chunks:['ご不明な点が','ございましたら','ご連絡ください']},
+  {lv:'N2',jp:'何卒よろしくお願い申し上げます。',kana:'なにとぞよろしくおねがいもうしあげます。',ro:'Nanitozo yoroshiku onegai mōshiagemasu.',ko:'아무쪼록 잘 부탁드립니다.',tip:'메일 맺음말의 최상급. 「何卒」는 격식 있는 부탁을 강조해요.',chunks:['何卒','よろしく','お願い申し上げます']}]},
+
+{ id:'u17', title:'커리어와 면접 심화', jp:'キャリア・面接', color:'#1E6091', char:'mochi', stage:'s6',
+  items:[
+  {lv:'N2',jp:'これまでの経験を活かしたいと考えております。',kana:'これまでのけいけんをいかしたいとかんがえております。',ro:'Kore made no keiken o ikashitai to kangaete orimasu.',ko:'지금까지의 경험을 살리고 싶다고 생각합니다.',tip:'「〜と考えております」는 「〜と思います」의 격식형. 면접 답변의 기본 골격이에요.',chunks:['これまでの経験を','活かしたいと','考えております']},
+  {lv:'N2',jp:'御社の事業に貢献できると考えております。',kana:'おんしゃのじぎょうにこうけんできるとかんがえております。',ro:'Onsha no jigyō ni kōken dekiru to kangaete orimasu.',ko:'귀사의 사업에 공헌할 수 있다고 생각합니다.',tip:'면접 마무리의 정석. 貢献(공헌)은 일본 면접 최빈출 단어예요.',chunks:['御社の事業に','貢献できると','考えております']},
+  {lv:'N2',jp:'課題を分析した上で提案しました。',kana:'かだいをぶんせきしたうえでていあんしました。',ro:'Kadai o bunseki shita ue de teian shimashita.',ko:'과제를 분석한 후에 제안했습니다.',tip:'N2 문형 「〜した上で」＝ 〜한 다음에. 성과를 설명할 때 논리가 살아나요.',chunks:['課題を分析した','上で','提案しました']},
+  {lv:'N2',jp:'チームをまとめる役割を担ってきました。',kana:'チームをまとめるやくわりをになってきました。',ro:'Chīmu o matomeru yakuwari o ninatte kimashita.',ko:'팀을 이끄는 역할을 맡아 왔습니다.',tip:'「役割を担う」는 이력서·면접 전용 표현. 「リーダーをしました」보다 훨씬 무게가 있어요.',chunks:['チームをまとめる','役割を','担ってきました']},
+  {lv:'N2',jp:'前職では品質改善に取り組んでおりました。',kana:'ぜんしょくではひんしつかいぜんにとりくんでおりました。',ro:'Zenshoku de wa hinshitsu kaizen ni torikunde orimashita.',ko:'전 직장에서는 품질 개선에 힘썼습니다.',tip:'「〜に取り組む」＝ 〜에 몰두하다. 職務経歴書(경력기술서)에 꼭 등장해요.',chunks:['前職では','品質改善に','取り組んでおりました']},
+  {lv:'N2',jp:'長期的にキャリアを築いていきたいです。',kana:'ちょうきてきにキャリアをきずいていきたいです。',ro:'Chōkiteki ni kyaria o kizuite ikitai desu.',ko:'장기적으로 커리어를 쌓아 가고 싶습니다.',tip:'일본 기업은 장기 근속을 중시해요. 이 한마디가 안심을 줍니다.',chunks:['長期的に','キャリアを','築いていきたいです']},
+  {lv:'N2',jp:'差し支えなければ、選考の流れを教えてください。',kana:'さしつかえなければ、せんこうのながれをおしえてください。',ro:'Sashitsukae nakereba, senkō no nagare o oshiete kudasai.',ko:'괜찮으시다면 전형 절차를 알려 주세요.',tip:'「差し支えなければ」＝ 지장이 없으시다면. 역질문(逆質問)을 정중하게 여는 말.',chunks:['差し支えなければ','選考の流れを','教えてください']},
+  {lv:'N2',jp:'本日は貴重なお時間をいただきありがとうございました。',kana:'ほんじつはきちょうなおじかんをいただきありがとうございました。',ro:'Honjitsu wa kichō na o-jikan o itadaki arigatō gozaimashita.',ko:'오늘 귀중한 시간 내주셔서 감사했습니다.',tip:'면접 마무리의 완성형. 당일 저녁 お礼メール에도 그대로 씁니다.',chunks:['本日は','貴重なお時間をいただき','ありがとうございました']}]}
 ];
 
 /* ── 파생 데이터 ────────────────────────────────── */
@@ -530,7 +599,45 @@ UNITS.forEach(u=>{ for(let i=0;i<u.items.length;i+=4){
     n:i/4+1, items:u.items.slice(i,i+4)}); } });
 const byId = {}; ALL.forEach(it=>byId[it.id]=it);
 const roByJp = {}; ALL.forEach(it=>roByJp[it.jp]=it.ro);
-const LVMETA = {'N5':{c:'n5',t:'N5'},'N4':{c:'n4',t:'N4'},'慣':{c:'kn',t:'관용구'}};
+const ANCHOR=/[\u3040-\u309F\u30A0-\u30FF\u3000\u3001\u3002\u300C\u300D\u300E\u300F\u301C\u2026\uFF01\uFF1F\uFF0C\uFF0E ]/;
+const esc = t => t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+function buildRuby(jp, kana){
+  if(!kana) return null;
+  const segs=[];
+  for(const ch of jp){ const a=ANCHOR.test(ch);
+    if(segs.length && segs[segs.length-1].a===a) segs[segs.length-1].t+=ch; else segs.push({a:a,t:ch}); }
+  if(!segs.some(x=>!x.a)) return null;
+  let out='', k=0;
+  for(let i=0;i<segs.length;i++){
+    const sg=segs[i];
+    if(sg.a){ const idx=kana.indexOf(sg.t,k); if(idx<0) return null; k=idx+sg.t.length; out+=esc(sg.t); }
+    else{
+      const nxt=segs[i+1]; let end;
+      if(!nxt) end=kana.length;
+      else { const idx=kana.indexOf(nxt.t,k); if(idx<0) return null; end=idx; }
+      const r=kana.slice(k,end); if(!r) return null;
+      out+='<ruby>'+esc(sg.t)+'<rp>(</rp><rt>'+esc(r)+'</rt><rp>)</rp></ruby>'; k=end;
+    }
+  }
+  return out;
+}
+function parseRb(str){
+  let out='', i=0, m; const re=/\{([^|{}]+)\|([^|{}]+)\}/g;
+  while((m=re.exec(str))){ out+=esc(str.slice(i,m.index));
+    out+='<ruby>'+esc(m[1])+'<rp>(</rp><rt>'+esc(m[2])+'</rt><rp>)</rp></ruby>'; i=m.index+m[0].length; }
+  return out+esc(str.slice(i));
+}
+ALL.forEach(it=>{ it.ruby = it.rb ? parseRb(it.rb) : buildRuby(it.jp, it.kana); });
+const rubyByJp = {}; ALL.forEach(it=>rubyByJp[it.jp]=it.ruby);
+const jpHTML = (jp)=> (S.set.kana && rubyByJp[jp]) ? rubyByJp[jp] : esc(jp);
+const STAGES=[
+ {id:'s1',n:'1단계 · 입문',lv:'N5',d:'인사·쇼핑·전철·주문 — 도착하자마자 쓰는 말'},
+ {id:'s2',n:'2단계 · 정착',lv:'N5–N4',d:'집·구청·병원 — 혼자 처리해야 하는 일들'},
+ {id:'s3',n:'3단계 · 출근',lv:'N4',d:'인사·보고·전화 — 회사에서 매일 쓰는 말'},
+ {id:'s4',n:'4단계 · 관계',lv:'N4',d:'잡담·회식·면접·반말 — 사람과 가까워지는 말'},
+ {id:'s5',n:'5단계 · 실전',lv:'N3',d:'경어·트러블 대응·회의 — 제대로 일하기 시작할 때'},
+ {id:'s6',n:'6단계 · 비즈니스',lv:'N2',d:'메일·커리어 — 문서와 중요한 자리에서 쓰는 말'}];
+const LVMETA = {'N5':{c:'n5',t:'N5'},'N4':{c:'n4',t:'N4'},'N3':{c:'n3',t:'N3'},'N2':{c:'n2',t:'N2'},'慣':{c:'kn',t:'관용구'}};
 const lvBadge = it => { const m=LVMETA[it.lv]||LVMETA['N5']; return '<span class="lvb '+m.c+'">'+m.t+'</span>'; };
 
 /* ── 캐릭터 (오리지널 SVG) ───────────────────────── */
@@ -624,7 +731,19 @@ function lessonState(i){
 }
 function renderPath(){
   const root=$('#pathRoot'); root.innerHTML='';
-  UNITS.forEach(u=>{
+  const nav=$('#stageNav'); nav.innerHTML='';
+  STAGES.forEach((st,si)=>{
+    const sUnits=UNITS.filter(u=>u.stage===st.id);
+    const sL=LESSONS.filter(l=>sUnits.some(u=>u.id===l.unit));
+    const sDone=sL.filter(l=>S.done[l.id]).length;
+    const chip=el('button','fchip',st.n.split(' · ')[0]+' '+sDone+'/'+sL.length);
+    chip.onclick=()=>{ const t=document.getElementById('stage-'+st.id);
+      if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); };
+    nav.appendChild(chip);
+    const head=el('div','stagehead'+(si===0?' first':'')); head.id='stage-'+st.id;
+    head.innerHTML='<div><b>'+st.n+'</b><p>'+st.d+'</p></div><span class="sh-lv">'+st.lv+'</span>';
+    root.appendChild(head);
+  sUnits.forEach(u=>{
     const ls = LESSONS.filter(l=>l.unit===u.id);
     const doneN = ls.filter(l=>S.done[l.id]).length;
     const box = el('section','unit');
@@ -648,6 +767,7 @@ function renderPath(){
     });
     box.appendChild(path); root.appendChild(box);
   });
+  });
 }
 
 /* ── 상단/목표 ─────────────────────────────────── */
@@ -658,14 +778,15 @@ function renderTop(){
   $('#goalPct').textContent = Math.round(pct*100)+'%';
   $('#goalTitle').textContent = '오늘 '+S.today+' / '+S.set.goal+' XP';
   $('#goalSub').textContent = pct>=1 ? '목표 달성! 그래도 멈출 필요 없어요. 계속 가도 돼요.'
-    : 'JLPT N5–N4 문장만 담았어요. 하트도 에너지도 없으니 원하는 만큼 하세요.';
+    : 'N5부터 N2까지 6단계. 하트도 에너지도 없으니 원하는 만큼 하세요.';
   $('#mXp').textContent=S.xp; $('#mStreak').textContent=S.streak;
   $('#mLesson').textContent=Object.keys(S.done).length;
   const lv = Math.floor(S.xp/300)+1;
   const names=['초심자','편의점 마스터','전철 통근러','회사원 1년차','회식 생존자','경어 사용자','현지인 모드'];
   $('#meLevel').textContent='레벨 '+lv+' · '+names[Math.min(lv-1,names.length-1)];
-  const n5=ALL.filter(x=>x.lv==='N5').length, n4=ALL.filter(x=>x.lv==='N4').length;
-  $('#meSub').textContent = '다음 레벨까지 '+(lv*300-S.xp)+' XP · 배운 문장 '+Object.keys(S.done).length*4+'개 · 전체 N5 '+n5+' / N4 '+n4+' / 관용구 '+(ALL.length-n5-n4);
+  const c=v=>ALL.filter(x=>x.lv===v).length;
+  $('#meSub').textContent = '다음 레벨까지 '+(lv*300-S.xp)+' XP · 배운 문장 '+Object.keys(S.done).length*4+'개'
+    + ' · 전체 '+ALL.length+'문장 (N5 '+c('N5')+' / N4 '+c('N4')+' / N3 '+c('N3')+' / N2 '+c('N2')+' / 관용구 '+c('慣')+')';
 }
 
 /* ── 레슨 엔진 ─────────────────────────────────── */
@@ -697,7 +818,7 @@ $('#quitBtn').onclick=()=>{ if(!L) return; if(L.i>0 && !confirm('레슨을 나�
 
 function readingHTML(it){
   let h='';
-  if(S.set.kana && it.kana!==it.jp) h+='<div class="rd">'+it.kana+'</div>';
+  if(S.set.kana && !it.ruby && it.kana!==it.jp) h+='<div class="rd">'+it.kana+'</div>';
   if(S.set.romaji) h+='<div class="ro">'+it.ro+'</div>';
   return h;
 }
@@ -715,7 +836,7 @@ function distractors(it, n, key){
   return picked;
 }
 
-const jpFmt = x=>'<span class="j">'+x+'</span>'+(S.set.romaji&&roByJp[x]?'<span class="s">'+roByJp[x]+'</span>':'');
+const jpFmt = x=>'<span class="j">'+jpHTML(x)+'</span>'+(S.set.romaji&&roByJp[x]?'<span class="s">'+roByJp[x]+'</span>':'');
 function renderQ(){
   const body=$('#lbody'), fb=$('#fb');
   fb.className='fb'; fb.innerHTML='';
@@ -729,7 +850,7 @@ function renderQ(){
   if(q.type==='intro'){
     body.appendChild(el('h2','qtype','새 문장이에요'));
     const w=say('happy'); const b=el('div','bubble');
-    b.innerHTML='<div style="margin-bottom:7px">'+lvBadge(it)+'</div><div class="big">'+it.jp+'</div>'+readingHTML(it)+'<div style="margin-top:7px;font-size:15px;font-weight:700">'+it.ko+'</div>';
+    b.innerHTML='<div style="margin-bottom:7px">'+lvBadge(it)+'</div><div class="big">'+jpHTML(it.jp)+'</div>'+readingHTML(it)+'<div style="margin-top:7px;font-size:15px;font-weight:700">'+it.ko+'</div>';
     b.appendChild(audioRow(it)); w.appendChild(b); body.appendChild(w);
     body.appendChild(el('div','tip','💡 '+it.tip));
     speak(it.jp,false);
@@ -743,7 +864,7 @@ function renderQ(){
     if(q.type==='meaning'){
       prompt='이 문장은 무슨 뜻일까요?';
       const w=say(); const b=el('div','bubble');
-      b.innerHTML='<div class="big">'+it.jp+'</div>'+readingHTML(it);
+      b.innerHTML='<div class="big">'+jpHTML(it.jp)+'</div>'+readingHTML(it);
       b.appendChild(audioRow(it)); w.appendChild(b); render=w;
       if(S.set.auto) speak(it.jp,false);
       correct=it.ko; opts=shuffle([it].concat(distractors(it,3,'ko')).map(x=>x.ko));
@@ -805,7 +926,7 @@ function renderQ(){
   if(q.type==='speak'){
     body.appendChild(el('h2','qtype','소리 내어 따라 말해 보세요'));
     const w=say('happy'); const b=el('div','bubble');
-    b.innerHTML='<div class="big">'+it.jp+'</div>'+readingHTML(it)+'<div style="margin-top:6px;font-size:14px;font-weight:700">'+it.ko+'</div>';
+    b.innerHTML='<div class="big">'+jpHTML(it.jp)+'</div>'+readingHTML(it)+'<div style="margin-top:6px;font-size:14px;font-weight:700">'+it.ko+'</div>';
     b.appendChild(audioRow(it)); w.appendChild(b); body.appendChild(w);
     speak(it.jp,true);
     const SR = window.SpeechRecognition||window.webkitSpeechRecognition;
@@ -871,7 +992,7 @@ function grade(ok, it, correct){
   const msg=el('div','msg');
   msg.innerHTML='<span>'+mascot(L.char, ok?'happy':'sad', 42)+'</span>'
     + '<span><b>'+(ok?['잘했어요!','정확해요!','좋아요!','완벽해요!'][Math.random()*4|0]:'아쉬워요')+'</b>'
-    + '<span class="t" style="display:block">'+(ok?'':'정답: <span class="ansjp">'+correct+'</span>')+'</span></span>';
+    + '<span class="t" style="display:block">'+(ok?'':'정답: <span class="ansjp">'+jpHTML(correct)+'</span>')+'</span></span>';
   fb.appendChild(msg);
   if(!ok) fb.appendChild(el('div','tip','💡 '+it.tip));
   const row=el('div'); row.style.cssText='display:flex;gap:8px';
@@ -912,8 +1033,8 @@ function phraseRow(it){
   const r=el('div','prow');
   const play=el('button','iconbtn',SPK); play.setAttribute('aria-label','발음 듣기'); play.onclick=()=>speak(it.jp,false);
   const t=el('div','txt');
-  t.innerHTML='<div style="margin-bottom:3px">'+lvBadge(it)+'</div><div class="j">'+it.jp+'</div>'
-    +(S.set.kana&&it.kana!==it.jp?'<div class="r">'+it.kana+'</div>':'')
+  t.innerHTML='<div style="margin-bottom:3px">'+lvBadge(it)+'</div><div class="j">'+jpHTML(it.jp)+'</div>'
+    +(S.set.kana&&!it.ruby&&it.kana!==it.jp?'<div class="r">'+it.kana+'</div>':'')
     +'<div class="k">'+it.ko+'</div>'
     +(S.set.romaji?'<div class="r">'+it.ro+'</div>':'')
     +'<div class="tp">'+it.tip+'</div>';
@@ -929,7 +1050,7 @@ function renderBook(){
   UNITS.forEach(u=>mk(u.id,u.title));
   const lc=$('#lvChips'); lc.innerHTML='';
   const cnt=v=>ALL.filter(x=>x.lv===v).length;
-  [['all','모든 레벨'],['N5','N5 '+cnt('N5')],['N4','N4 '+cnt('N4')],['慣','관용구 '+cnt('慣')]].forEach(([id,label])=>{
+  [['all','모든 레벨'],['N5','N5 '+cnt('N5')],['N4','N4 '+cnt('N4')],['N3','N3 '+cnt('N3')],['N2','N2 '+cnt('N2')],['慣','관용구 '+cnt('慣')]].forEach(([id,label])=>{
     const b=el('button','fchip',label); b.setAttribute('aria-pressed',lvFilter===id);
     b.onclick=()=>{ lvFilter=id; renderBook(); }; lc.appendChild(b); });
   const qv=$('#bookSearch').value.trim().toLowerCase();
@@ -953,6 +1074,15 @@ function renderReview(){
   $('#revCount').textContent = wrongIds.length? '틀린 문장 '+wrongIds.length+'개가 기다리고 있어요.' : '아직 틀린 문장이 없어요. 좋은 신호예요!';
   $('#revStart').disabled = !wrongIds.length;
   $('#revMascot').innerHTML = mascot('neko', wrongIds.length?'idle':'happy', 54);
+  const sp=$('#stageProg'); if(sp){ sp.innerHTML='';
+    STAGES.forEach(st=>{
+      const sU=UNITS.filter(u=>u.stage===st.id), sL=LESSONS.filter(l=>sU.some(u=>u.id===l.unit));
+      const d=sL.filter(l=>S.done[l.id]).length, pct=Math.round(d/sL.length*100);
+      const row=el('div','setrow');
+      row.innerHTML='<div class="lab"><b>'+st.n+'</b><span>'+d+' / '+sL.length+' 레슨 완료</span></div>'
+        +'<div style="flex:none;width:96px"><div class="bar" style="height:10px"><i style="width:'+pct+'%"></i></div></div>'
+        +'<span class="lvb '+(LVMETA[st.lv]?LVMETA[st.lv].c:'n5')+'" style="flex:none">'+st.lv+'</span>';
+      sp.appendChild(row); }); }
   const favIds=Object.keys(S.fav).filter(id=>byId[id]);
   $('#favCount').textContent = favIds.length? favIds.length+'개' : '';
   const fl=$('#favList'); fl.innerHTML='';
