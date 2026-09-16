@@ -375,10 +375,30 @@ rp{display:none}
       <select id="voiceSel" class="search" style="margin:0"></select>
       <button class="btn ghost" id="voiceTest" style="width:100%;margin-top:9px">「はじめまして」 들어보기</button>
     </div>
-    <h2 class="sect-h">데이터</h2>
+    <h2 class="sect-h">기록 백업</h2>
+    <div class="card">
+      <p id="savedLine" style="margin:0 0 11px;font-size:12.5px;color:var(--ink-2)"></p>
+      <button class="btn ghost" id="exportBtn" style="width:100%">백업 코드 만들기</button>
+      <button class="btn ghost" id="importBtn" style="width:100%;margin-top:8px">백업 코드로 복원하기</button>
+      <div id="backupBox" hidden style="margin-top:11px">
+        <textarea id="backupText" class="search" rows="4" spellcheck="false"
+          style="margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;line-height:1.5;resize:vertical;word-break:break-all"></textarea>
+        <div style="display:flex;gap:8px;margin-top:9px">
+          <button class="btn" id="backupAct" style="flex:1"></button>
+          <button class="btn ghost" id="backupClose" style="flex:none">닫기</button>
+        </div>
+        <p id="backupHint" style="margin:9px 0 0;font-size:11.5px;color:var(--ink-3)"></p>
+      </div>
+      <p style="margin:12px 0 0;font-size:11.5px;color:var(--ink-3);line-height:1.65">
+        기록은 이 브라우저에만 저장돼요. 서버로 보내지 않습니다.<br>
+        폰과 노트북은 기록이 따로 쌓이니, 옮기려면 백업 코드를 복사해 두세요.<br>
+        <b>아이폰·맥 Safari</b>는 7일 넘게 안 들어오면 기록을 자동으로 지워요.
+        공유 → <b>홈 화면에 추가</b>를 해 두면 지워지지 않습니다.
+      </p>
+    </div>
+    <h2 class="sect-h">초기화</h2>
     <div class="card">
       <button class="btn ghost" id="resetBtn" style="width:100%">학습 기록 모두 지우기</button>
-      <p style="margin:9px 0 0;font-size:11.5px;color:var(--ink-3)">기록은 이 브라우저에만 저장돼요. 서버로 보내지 않아요.</p>
     </div>
   </main>
 
@@ -685,13 +705,16 @@ function mascot(key, mood, size){
 
 /* ── 저장소 ─────────────────────────────────────── */
 const KEY='mochi-jp-v1';
-const DEF={xp:0,streak:0,last:'',today:0,todayDate:'',done:{},wrong:{},fav:{},placeDismissed:false,
+const DEF={xp:0,streak:0,last:'',today:0,todayDate:'',done:{},wrong:{},fav:{},placeDismissed:false,saved:0,
   set:{kana:true,romaji:true,auto:true,speak:false,unlockAll:false,rate:0.9,goal:50,theme:'system',voice:''}};
 let S = load();
 function load(){ try{ const r=localStorage.getItem(KEY); if(!r) return JSON.parse(JSON.stringify(DEF));
     const p=JSON.parse(r); return Object.assign(JSON.parse(JSON.stringify(DEF)),p,{set:Object.assign({},DEF.set,p.set||{})}); }
   catch(e){ return JSON.parse(JSON.stringify(DEF)); } }
-function save(){ try{ localStorage.setItem(KEY,JSON.stringify(S)); }catch(e){} }
+function save(){ try{ S.saved=Date.now(); localStorage.setItem(KEY,JSON.stringify(S)); storageOK=true; }
+  catch(e){ storageOK=false; } }
+let storageOK=true;
+try{ localStorage.setItem('__mochi_t','1'); localStorage.removeItem('__mochi_t'); }catch(e){ storageOK=false; }
 const today = ()=> new Date().toISOString().slice(0,10);
 function touchDay(){
   const t=today();
@@ -1231,17 +1254,19 @@ $('#mixStart').onclick=()=>{
 };
 
 /* ── 설정 ───────────────────────────────────────── */
+const REPAINT=[];
 function bindSwitch(sel,key,after){
   const b=$(sel);
   const paint=()=>b.setAttribute('aria-checked', !!S.set[key]);
   b.onclick=()=>{ S.set[key]=!S.set[key]; save(); paint(); if(after)after(); };
-  paint();
+  paint(); REPAINT.push(paint);
 }
+function syncSettings(){ REPAINT.forEach(f=>f()); }
 function bindSeg(sel,key,cast,after){
   const wrap=$(sel);
   const paint=()=>[...wrap.children].forEach(b=>b.setAttribute('aria-pressed', cast(b.dataset[Object.keys(b.dataset)[0]])===S.set[key]));
   [...wrap.children].forEach(b=>b.onclick=()=>{ S.set[key]=cast(b.dataset[Object.keys(b.dataset)[0]]); save(); paint(); if(after)after(); });
-  paint();
+  paint(); REPAINT.push(paint);
 }
 function applyTheme(){
   const t=S.set.theme;
@@ -1262,7 +1287,76 @@ function renderVoices(){
 $('#placeBtn').onclick=()=>openTest(placementTest());
 $('#voiceTest').onclick=()=>speak('はじめまして。よろしくお願いします。',false);
 $('#resetBtn').onclick=()=>{ if(!confirm('학습 기록(XP·연속일·완료 레슨·즐겨찾기)을 모두 지울까요? 되돌릴 수 없어요.')) return;
-  S=JSON.parse(JSON.stringify(DEF)); save(); applyTheme(); renderAll(); toast('기록을 모두 지웠어요.'); };
+  S=JSON.parse(JSON.stringify(DEF)); save(); applyTheme(); syncSettings(); renderAll(); toast('기록을 모두 지웠어요.'); };
+
+/* ── 기록 백업 ─────────────────────────────────── */
+function b64e(str){ const b=new TextEncoder().encode(str); let s2=''; b.forEach(c=>s2+=String.fromCharCode(c)); return btoa(s2).replace(/=+$/,''); }
+function b64d(code){ const raw=atob(code); const a=new Uint8Array(raw.length);
+  for(let i=0;i<raw.length;i++) a[i]=raw.charCodeAt(i); return new TextDecoder().decode(a); }
+function encodeBackup(){
+  const o={v:1,t:Date.now(),xp:S.xp,st:S.streak,la:S.last,td:S.today,tdd:S.todayDate,
+    d:Object.keys(S.done).join(','),
+    w:Object.entries(S.wrong).map(([k,v])=>k+':'+v).join(','),
+    f:Object.keys(S.fav).join(','), s:S.set};
+  return 'MOCHI1.'+b64e(JSON.stringify(o));
+}
+function decodeBackup(code){
+  const c=String(code||'').trim().replace(/\s+/g,'');
+  if(c.indexOf('MOCHI1.')!==0) throw new Error('형식이 맞지 않아요');
+  const j=JSON.parse(b64d(c.slice(7)));
+  if(!j || j.v!==1) throw new Error('버전이 맞지 않아요');
+  return j;
+}
+function applyBackup(j){
+  const ns=JSON.parse(JSON.stringify(DEF));
+  ns.xp=+j.xp||0; ns.streak=+j.st||0; ns.last=j.la||''; ns.today=+j.td||0; ns.todayDate=j.tdd||'';
+  (j.d?j.d.split(','):[]).forEach(id=>{ if(id) ns.done[id]=true; });
+  (j.w?j.w.split(','):[]).forEach(pair=>{ const k=pair.split(':')[0], v=+pair.split(':')[1];
+    if(k && byId[k]) ns.wrong[k]=v||1; });
+  (j.f?j.f.split(','):[]).forEach(id=>{ if(id && byId[id]) ns.fav[id]=1; });
+  ns.set=Object.assign({},DEF.set,j.s||{});
+  ns.placeDismissed=true;
+  S=ns; save();
+}
+function fmtWhen(ms){
+  if(!ms) return '아직 저장된 기록이 없어요';
+  const d=new Date(ms), p=n=>String(n).padStart(2,'0');
+  return d.getFullYear()+'.'+p(d.getMonth()+1)+'.'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes());
+}
+function renderSaved(){
+  const t=$('#savedLine'); if(!t) return;
+  if(!storageOK){ t.innerHTML='<b style="color:var(--bad)">이 브라우저에서는 기록을 저장할 수 없어요.</b><br>시크릿 모드이거나 사이트 데이터가 차단된 상태일 수 있어요.'; return; }
+  t.textContent='마지막 저장 '+fmtWhen(S.saved)+' · 완료 레슨 '+Object.keys(S.done).length+'개 · '+S.xp+' XP';
+}
+function showBackup(mode){
+  const box=$('#backupBox'), ta=$('#backupText'), act=$('#backupAct'), hint=$('#backupHint');
+  box.hidden=false;
+  if(mode==='out'){
+    ta.value=encodeBackup(); ta.readOnly=true; act.textContent='코드 복사하기';
+    hint.textContent='이 코드를 메모나 메신저에 저장해 두세요. 다른 기기에서 「백업 코드로 복원하기」에 붙여넣으면 진도가 그대로 옮겨져요.';
+    act.onclick=async()=>{
+      try{ await navigator.clipboard.writeText(ta.value); toast('백업 코드를 복사했어요.'); }
+      catch(e){ ta.focus(); ta.select(); toast('코드를 길게 눌러 직접 복사해 주세요.'); }
+    };
+    setTimeout(()=>{ ta.focus(); ta.select(); },50);
+  } else {
+    ta.value=''; ta.readOnly=false; ta.placeholder='MOCHI1. 로 시작하는 백업 코드를 붙여넣으세요';
+    act.textContent='불러오기';
+    hint.textContent='복원하면 지금 이 기기의 기록은 백업 코드의 내용으로 덮어써집니다.';
+    act.onclick=()=>{
+      let j; try{ j=decodeBackup(ta.value); }
+      catch(e){ toast('코드를 읽을 수 없어요. 전체를 다 붙여넣었는지 확인해 주세요.'); return; }
+      const n=(j.d?j.d.split(',').filter(Boolean).length:0);
+      if(!confirm('백업 내용\n\n' + fmtWhen(j.t) + ' 저장\n완료 레슨 ' + n + '개 · ' + (j.xp||0) + ' XP · 연속 ' + (j.st||0) + '일\n\n지금 기기의 기록을 이 내용으로 바꿀까요?')) return;
+      applyBackup(j); applyTheme(); syncSettings(); renderAll(); renderSaved();
+      $('#backupBox').hidden=true; toast('기록을 복원했어요.');
+    };
+    setTimeout(()=>ta.focus(),50);
+  }
+}
+$('#exportBtn').onclick=()=>showBackup('out');
+$('#importBtn').onclick=()=>showBackup('in');
+$('#backupClose').onclick=()=>{ $('#backupBox').hidden=true; };
 
 /* ── 탭 전환 ────────────────────────────────────── */
 const VIEWS={learn:'#v-learn',book:'#v-book',review:'#v-review',me:'#v-me'};
@@ -1278,7 +1372,7 @@ document.querySelectorAll('.tab').forEach(t=>{
 });
 
 /* ── 부팅 ───────────────────────────────────────── */
-function renderAll(){ renderTop(); renderPlaceCard(); renderPath(); renderBook(); renderReview();
+function renderAll(){ renderTop(); renderSaved(); renderPlaceCard(); renderPath(); renderBook(); renderReview();
   $('#brandMascot').innerHTML=mascot('mochi','wink',30);
   $('#meMascot').innerHTML=mascot('mochi','happy',58); }
 bindSwitch('#swKana','kana',()=>{renderBook();renderReview();});
